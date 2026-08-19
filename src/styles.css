@@ -122,7 +122,7 @@ a:hover { color: var(--navy); }
   gap: 20px;
 }
 
-.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; flex: none; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; flex: 0 1 auto; min-width: 0; }
 .brand img { height: 52px; width: auto; flex: none; }
 .brand-text { font-family: var(--display); font-weight: 800; text-transform: uppercase; line-height: .95; }
 .brand-sub { display: block; font-size: 13px; color: var(--blue); letter-spacing: .14em; }
@@ -244,8 +244,8 @@ a:hover { color: var(--navy); }
 .sponsor-band h2 { font-size: clamp(26px, 5.5vw, 34px); color: var(--navy); }
 .sponsor-actions { display: flex; gap: 12px; flex-wrap: wrap; }
 
-.sponsor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; }
-.sponsor-grid--page { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+.sponsor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 16px; }
+.sponsor-grid--page { grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 20px; }
 .sponsor-tile {
   height: 140px;
   border: 1px solid var(--line);
@@ -309,7 +309,7 @@ a:hover { color: var(--navy); }
 
 /* ---------- news ---------- */
 
-.news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
+.news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 28px; }
 .post-card { background: var(--white); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; }
 .post-card-photo { height: 210px; }
 .post-card-photo img { width: 100%; height: 100%; object-fit: cover; }
@@ -323,7 +323,7 @@ a:hover { color: var(--navy); }
 
 .newsletter-band {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 48px;
   align-items: center;
   border: 3px solid var(--navy);
@@ -338,7 +338,7 @@ a:hover { color: var(--navy); }
 .newsletter-frame { border: 2px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--wash-alt); }
 .newsletter-frame iframe { display: block; width: 100%; height: min(900px, 140vw); min-height: 520px; border: none; background: var(--white); }
 
-.issue-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+.issue-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 24px; }
 .issue-card { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; background: var(--white); }
 .issue-card-photo { height: 200px; }
 .issue-card-photo img { width: 100%; height: 100%; object-fit: cover; }
@@ -348,7 +348,7 @@ a:hover { color: var(--navy); }
 
 /* ---------- volunteer / forms ---------- */
 
-.split { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(28px, 5vw, 56px); align-items: start; }
+.split { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: clamp(28px, 5vw, 56px); align-items: start; }
 .section--navy { background: var(--navy); color: var(--white); }
 .section--navy p { color: #d3e0ee; max-width: 32em; text-wrap: pretty; font-size: 19px; }
 .contact-label { font-family: var(--display); font-weight: 700; text-transform: uppercase; letter-spacing: .12em; font-size: 14px; color: #7fb2ee; }
@@ -377,7 +377,7 @@ a:hover { color: var(--navy); }
 .field input:focus,
 .field select:focus,
 .field textarea:focus { border-color: var(--blue); outline: none; }
-.field-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.field-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 16px; }
 
 .check { display: flex; gap: 12px; align-items: flex-start; font-size: 17px; font-weight: 600; color: var(--body); cursor: pointer; }
 .check input { width: 22px; height: 22px; margin: 2px 0 0; accent-color: var(--blue); flex: none; }
@@ -385,14 +385,14 @@ a:hover { color: var(--navy); }
 
 /* ---------- donate ---------- */
 
-.donate-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(24px, 4vw, 48px); align-items: start; }
+.donate-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: clamp(24px, 4vw, 48px); align-items: start; }
 .donate-card { border: 3px solid var(--navy); border-radius: 16px; padding: clamp(22px, 5vw, 36px) clamp(20px, 5vw, 36px) clamp(26px, 5vw, 40px); }
 .donate-card h2 { font-size: clamp(30px, 6.5vw, 36px); line-height: 1; }
 .step { margin-top: 30px; }
 .step:first-of-type { margin-top: 28px; }
 .step-label { font-family: var(--display); font-weight: 700; text-transform: uppercase; letter-spacing: .12em; font-size: 15px; color: var(--muted); }
 
-.amount-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px; margin-top: 14px; }
+.amount-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(140px, 100%), 1fr)); gap: 14px; margin-top: 14px; }
 .amount input { position: absolute; opacity: 0; pointer-events: none; }
 .amount span {
   display: block;
@@ -443,7 +443,7 @@ a:hover { color: var(--navy); }
 /* ---------- sponsor tiers ---------- */
 
 #levels { scroll-margin-top: 120px; }
-.tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+.tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 24px; }
 .tier { background: var(--white); border: 2px solid var(--line); border-top: 8px solid var(--navy); border-radius: 14px; padding: 30px 28px 32px; display: flex; flex-direction: column; gap: 14px; }
 .tier--titan { border-top-color: var(--navy); }
 .tier--blue { border-top-color: var(--blue); }
@@ -490,15 +490,69 @@ a:hover { color: var(--navy); }
   .next-game-info { gap: 26px; }
 }
 
-@media (max-width: 620px) {
-  .btn { font-size: 21px; padding: 15px 26px; }
-  .hero-actions .btn { width: 100%; justify-content: center; }
-  .sponsor-actions .btn { flex: 1 1 auto; justify-content: center; }
-  .footer-inner { justify-content: flex-start; }
-}
-
 /* Donation amount buttons — each links straight to a Stripe Payment Link */
 .amount--link { text-decoration: none; display: block; }
 .amount--link span { cursor: pointer; transition: border-color .15s, background .15s, color .15s; }
 .amount--link:hover span { border-color: var(--blue); background: #eaf2fd; color: var(--blue); }
 .amount--link:focus-visible span { outline: 3px solid var(--blue); outline-offset: 2px; }
+
+/* ---------- small-screen fixes ---------- */
+
+@media (max-width: 900px) {
+  /* Long opponent and venue names were able to widen the schedule rows. */
+  .game-row { align-items: baseline; }
+  .game-opponent, .game-site, .next-game-title, .post-card h3 { overflow-wrap: anywhere; }
+  .next-game-photo img { min-height: 200px; }
+}
+
+/* The header row (logo + wordmark + Donate + burger) could not fit on a
+   phone and was forcing the whole page wider than the viewport. Everything
+   below shrinks those pieces so the row fits at 320px and up. */
+@media (max-width: 620px) {
+  .header-inner { padding: 10px 14px; gap: 10px; }
+  .brand { gap: 8px; }
+  .brand img { height: 40px; }
+  .brand-sub { font-size: 10px; letter-spacing: .1em; }
+  .brand-name { font-size: 21px; }
+
+  .mobile-bar { gap: 8px; flex: none; }
+  /* Donate and the burger share one height so they line up as a pair. */
+  .nav-donate {
+    font-size: 18px;
+    height: 46px;
+    padding: 0 16px;
+    margin-left: 0;
+    display: inline-flex;
+    align-items: center;
+    border: 2px solid transparent;
+  }
+  .nav-burger { width: 46px; height: 46px; gap: 5px; }
+  .nav-burger span { width: 22px; }
+
+  .topbar { font-size: 12px; padding: 8px 14px; }
+
+  .btn { font-size: 21px; padding: 15px 26px; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+  .sponsor-actions .btn { flex: 1 1 auto; justify-content: center; }
+  .footer-inner { justify-content: flex-start; }
+
+  .next-game-title { font-size: clamp(30px, 9vw, 44px); }
+  .next-game-info { gap: 20px 28px; }
+  .post-card-photo { height: 180px; }
+  .post-card-body { padding: 22px 22px 24px; }
+  .post-card h3 { font-size: 24px; }
+  .newsletter-cover { height: 200px; }
+}
+
+@media (max-width: 380px) {
+  .brand-name { font-size: 18px; white-space: normal; }
+  .brand img { height: 34px; }
+  .nav-donate { font-size: 16px; height: 42px; padding: 0 12px; }
+  .nav-burger { width: 42px; height: 42px; }
+  .btn { font-size: 19px; padding: 13px 20px; }
+}
+
+/* Long unbroken strings (emails, URLs) must not widen the page. */
+.side-meta-value, .contact-label + div, .info-value, .footer-inner {
+  overflow-wrap: anywhere;
+}

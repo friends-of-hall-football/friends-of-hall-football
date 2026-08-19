@@ -1,0 +1,45 @@
+{
+  "hero": {
+    "headline": "Support for Your Hall Titans",
+    "body": "Friends of Hall Football is the family and community run booster club behind your team. Your support pays for equipment, meals, team gear, and the moments these players will remember for the rest of their lives.",
+    "primaryButton": "Make a Donation",
+    "secondaryButton": "Shop Titans Gear"
+  },
+  "sponsorBand": {
+    "heading": "Thank You to Our Sponsors"
+  },
+  "scheduleSection": {
+    "nextUpHeading": "Next Up",
+    "nextUpNote": "2026 Varsity season",
+    "fullHeading": "Full 2026 Varsity Schedule"
+  },
+  "newsSection": {
+    "heading": "Titans News"
+  },
+  "newsletterBand": {
+    "eyebrow": "Hall Quarterly",
+    "heading": "Read the Newsletter",
+    "body": "Team updates, player recognition, fundraiser dates, and everything happening around the program \u2014 sent out each quarter and always available to read online.",
+    "button": "Read the Latest Issue"
+  },
+  "volunteer": {
+    "heading": "Lend a Hand on Game Day",
+    "body": "No experience needed and no long commitment. Grill burgers, work the gate, run the concession stand, or help load equipment. Tell us what sounds good and we will be in touch with the next opportunity.",
+    "formHeading": "Volunteer Sign-Up",
+    "formButton": "Count Me In",
+    "roles": [
+      "Concession stand",
+      "Grill / team meals",
+      "Gate and tickets",
+      "Equipment and field setup",
+      "Photography",
+      "Wherever you need me"
+    ]
+  },
+  "donatePage": {
+    "cardHeading": "Make a Donation",
+    "amountLabel": "Choose an amount",
+    "customButton": "Enter a different amount",
+    "payNote": "You will be taken to our secure Stripe checkout page, where you can pay by card, Apple\u00a0Pay, or Google\u00a0Pay. Friends of Hall Football never sees or stores your card number."
+  }
+}

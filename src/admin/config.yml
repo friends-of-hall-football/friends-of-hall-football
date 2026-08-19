@@ -25,6 +25,64 @@ collections:
   - name: data
     label: "Site Content"
     files:
+      - name: pages
+        label: "Page Text"
+        file: "src/_data/pages.json"
+        fields:
+          - name: hero
+            label: "Homepage — Top Banner"
+            widget: object
+            fields:
+              - { name: headline, label: "Headline", widget: string }
+              - { name: body, label: "Paragraph", widget: text }
+              - { name: primaryButton, label: "Blue button text", widget: string }
+              - { name: secondaryButton, label: "White button text", widget: string }
+          - name: sponsorBand
+            label: "Homepage — Sponsor Strip"
+            widget: object
+            fields:
+              - { name: heading, label: "Heading", widget: string }
+          - name: scheduleSection
+            label: "Homepage — Schedule"
+            widget: object
+            fields:
+              - { name: nextUpHeading, label: "Next Up heading", widget: string }
+              - { name: nextUpNote, label: "Small note beside it", widget: string }
+              - { name: fullHeading, label: "Full schedule heading", widget: string }
+          - name: newsSection
+            label: "Homepage — News"
+            widget: object
+            fields:
+              - { name: heading, label: "Heading", widget: string }
+          - name: newsletterBand
+            label: "Homepage — Newsletter Promo"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Small label above heading", widget: string }
+              - { name: heading, label: "Heading", widget: string }
+              - { name: body, label: "Paragraph", widget: text }
+              - { name: button, label: "Button text", widget: string }
+          - name: volunteer
+            label: "Homepage — Volunteer Section"
+            widget: object
+            fields:
+              - { name: heading, label: "Heading", widget: string }
+              - { name: body, label: "Paragraph", widget: text }
+              - { name: formHeading, label: "Form heading", widget: string }
+              - { name: formButton, label: "Submit button text", widget: string }
+              - name: roles
+                label: "Volunteer role options"
+                widget: list
+                field: { name: role, widget: string }
+          - name: donatePage
+            label: "Donate Page"
+            widget: object
+            fields:
+              - { name: cardHeading, label: "Heading", widget: string }
+              - { name: amountLabel, label: "Label above the amounts", widget: string }
+              - { name: customButton, label: "Custom-amount button text", widget: string }
+              - { name: payNote, label: "Note below the buttons", widget: text }
+
       - name: schedule
         label: "Game Schedule"
         file: "src/_data/schedule.json"

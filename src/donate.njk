@@ -15,10 +15,10 @@ permalink: donate.html
   <section class="section wrap">
     <div class="donate-layout">
       <div class="donate-card">
-        <h2>Make a Donation</h2>
+        <h2>{{ pages.donatePage.cardHeading }}</h2>
 
         <div class="step">
-          <div class="step-label">Choose an amount</div>
+          <div class="step-label">{{ pages.donatePage.amountLabel }}</div>
           <div class="amount-grid">
             {% for tier in donation.amounts %}
             <a class="amount amount--link" href="{{ tier.link }}">
@@ -26,10 +26,10 @@ permalink: donate.html
             </a>
             {% endfor %}
           </div>
-          <a class="btn btn--outline btn--block" href="{{ donation.customLink }}" style="margin-top:18px">Enter a different amount</a>
+          <a class="btn btn--outline btn--block" href="{{ donation.customLink }}" style="margin-top:18px">{{ pages.donatePage.customButton }}</a>
         </div>
 
-        <p class="pay-note">You will be taken to our secure Stripe checkout page, where you can pay by card, Apple&nbsp;Pay, or Google&nbsp;Pay. Friends of Hall Football never sees or stores your card number.</p>
+        <p class="pay-note">{{ pages.donatePage.payNote }}</p>
       </div>
 
       <div class="side-stack">

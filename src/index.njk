@@ -9,11 +9,11 @@ permalink: index.html
     <div class="hero-scrim"></div>
     <div class="hero-inner">
       <div class="hero-copy">
-        <h1>Support for Your Hall Titans</h1>
-        <p>Friends of Hall Football is the family and community run booster club behind your team. Your support pays for equipment, meals, team gear, and the moments these players will remember for the rest of their lives.</p>
+        <h1>{{ pages.hero.headline }}</h1>
+        <p>{{ pages.hero.body }}</p>
         <div class="hero-actions">
-          <a class="btn btn--primary" href="donate.html">Make a Donation</a>
-          <a class="btn btn--white" href="{{ site.storeUrl }}" target="_blank" rel="noopener">Shop Titans Gear <svg class="external-icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"></path><path d="M20 4 11 13"></path><path d="M19 15v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4"></path></svg></a>
+          <a class="btn btn--primary" href="donate.html">{{ pages.hero.primaryButton }}</a>
+          <a class="btn btn--white" href="{{ site.storeUrl }}" target="_blank" rel="noopener">{{ pages.hero.secondaryButton }} <svg class="external-icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"></path><path d="M20 4 11 13"></path><path d="M19 15v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4"></path></svg></a>
         </div>
       </div>
     </div>
@@ -23,7 +23,7 @@ permalink: index.html
   <section class="sponsor-band">
     <div class="wrap">
       <div class="section-head section-head--split">
-        <h2>Thank You to Our Sponsors</h2>
+        <h2>{{ pages.sponsorBand.heading }}</h2>
         <div class="sponsor-actions">
           <a class="btn btn--outline btn--small" href="sponsors.html">See All Sponsors</a>
           <a class="btn btn--primary btn--small" href="sponsors.html#levels">Become a Sponsor</a>
@@ -39,8 +39,8 @@ permalink: index.html
 
   <section class="section wrap" id="schedule">
     <div class="section-head">
-      <h2>Next Up</h2>
-      <span class="section-note" style="margin:0">2026 Varsity season</span>
+      <h2>{{ pages.scheduleSection.nextUpHeading }}</h2>
+      <span class="section-note" style="margin:0">{{ pages.scheduleSection.nextUpNote }}</span>
     </div>
     <div class="next-game">
       <div class="next-game-panel">
@@ -69,7 +69,7 @@ permalink: index.html
 
   <section class="section section--tight wrap">
     <div class="section-head">
-      <h3 style="font-size:32px;color:var(--navy)">Full 2026 Varsity Schedule</h3>
+      <h3 style="font-size:32px;color:var(--navy)">{{ pages.scheduleSection.fullHeading }}</h3>
       <a class="inline-link" href="{{ site.ciacUrl }}" target="_blank" rel="noopener">View on CIAC <svg class="external-icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"></path><path d="M20 4 11 13"></path><path d="M19 15v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4"></path></svg></a>
     </div>
     <div class="schedule">
@@ -94,7 +94,7 @@ permalink: index.html
   <section class="section section--wash" id="news">
     <div class="wrap">
       <div class="section-head">
-        <h2>Titans News</h2>
+        <h2>{{ pages.newsSection.heading }}</h2>
         <a class="inline-link" href="{{ site.facebookUrl }}" target="_blank" rel="noopener">Follow us on Facebook</a>
       </div>
       <div class="news-grid">
@@ -116,11 +116,11 @@ permalink: index.html
   <section class="section wrap">
     <div class="newsletter-band">
       <div>
-        <div class="eyebrow">Hall Quarterly</div>
-        <h2>Read the Newsletter</h2>
-        <p>Team updates, player recognition, fundraiser dates, and everything happening around the program — sent out each quarter and always available to read online.</p>
+        <div class="eyebrow">{{ pages.newsletterBand.eyebrow }}</div>
+        <h2>{{ pages.newsletterBand.heading }}</h2>
+        <p>{{ pages.newsletterBand.body }}</p>
         <div class="hero-actions" style="margin-top:26px">
-          <a class="btn btn--outline" href="newsletter.html">Read the Latest Issue</a>
+          <a class="btn btn--outline" href="newsletter.html">{{ pages.newsletterBand.button }}</a>
         </div>
       </div>
       <div class="newsletter-cover"><img src="/images/newsletter-cover.png" alt="Hall Quarterly newsletter cover"></div>
@@ -130,16 +130,16 @@ permalink: index.html
   <section class="section section--navy">
     <div class="wrap split">
       <div>
-        <h2 style="color:#fff">Lend a Hand on Game Day</h2>
-        <p>No experience needed and no long commitment. Grill burgers, work the gate, run the concession stand, or help load equipment. Tell us what sounds good and we will be in touch with the next opportunity.</p>
+        <h2 style="color:#fff">{{ pages.volunteer.heading }}</h2>
+        <p>{{ pages.volunteer.body }}</p>
         <div style="margin-top:28px">
           <div class="contact-label">Questions?</div>
           <div style="margin-top:6px;color:#d3e0ee">{{ site.contactEmail }}</div>
         </div>
       </div>
       <div class="card">
-        <h3>Volunteer Sign-Up</h3>
-        <form class="card-form" method="post" name="volunteer" method="POST" data-netlify="true" action="/thank-you.html">
+        <h3>{{ pages.volunteer.formHeading }}</h3>
+        <form class="card-form" name="volunteer" method="POST" data-netlify="true" action="/thank-you.html">
           <label class="field">Your name
             <input type="text" name="name" placeholder="Jane Carlson">
           </label>
@@ -148,15 +148,10 @@ permalink: index.html
           </label>
           <label class="field">Where can you help?
             <select name="role">
-              <option>Concession stand</option>
-              <option>Grill / team meals</option>
-              <option>Gate and tickets</option>
-              <option>Equipment and field setup</option>
-              <option>Photography</option>
-              <option>Wherever you need me</option>
+              {% for role in pages.volunteer.roles %}<option>{{ role }}</option>{% endfor %}
             </select>
           </label>
-          <button class="btn btn--primary btn--block" type="submit">Count Me In</button>
+          <button class="btn btn--primary btn--block" type="submit">{{ pages.volunteer.formButton }}</button>
         </form>
       </div>
     </div>
