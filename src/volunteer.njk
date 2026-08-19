@@ -1,0 +1,23 @@
+---
+title: "Volunteer — Friends of Hall Football"
+active: volunteer
+layout: base.njk
+permalink: volunteer.html
+---
+
+  <section class="section wrap">
+    <div class="section-head"><h2>{{ pages.volunteerPage.heading }}</h2></div>
+    <p class="section-lede">{{ pages.volunteerPage.intro }}</p>
+
+    <div class="signup-list">
+      {{ pages.volunteerPage.signupHtml | safe }}
+    </div>
+
+    <div class="side-card" style="margin-top:36px">
+      <h3>Another Way to Help?</h3>
+      <p>{{ pages.volunteerPage.closing }}</p>
+      <div class="link-stack">
+        <a href="mailto:{{ site.contactEmail }}">{{ site.contactEmail }}</a>
+      </div>
+    </div>
+  </section>

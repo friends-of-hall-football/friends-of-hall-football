@@ -23,23 +23,20 @@
     "button": "Read the Latest Issue"
   },
   "volunteer": {
-    "heading": "Lend a Hand on Game Day",
-    "body": "No experience needed and no long commitment. Grill burgers, work the gate, run the concession stand, or help load equipment. Tell us what sounds good and we will be in touch with the next opportunity.",
-    "formHeading": "Volunteer Sign-Up",
-    "formButton": "Count Me In",
-    "roles": [
-      "Concession stand",
-      "Grill / team meals",
-      "Gate and tickets",
-      "Equipment and field setup",
-      "Photography",
-      "Wherever you need me"
-    ]
+    "heading": "Lend a Hand",
+    "body": "No experience needed and no long commitment. Grill burgers, work the gate, run the concession stand, or help load equipment. Sign up for whatever fits your schedule.",
+    "button": "See Volunteer Opportunities"
   },
   "donatePage": {
     "cardHeading": "Make a Donation",
     "amountLabel": "Choose an amount",
     "customButton": "Enter a different amount",
     "payNote": "You will be taken to our secure Stripe checkout page, where you can pay by card, Apple\u00a0Pay, or Google\u00a0Pay. Friends of Hall Football never sees or stores your card number."
+  },
+  "volunteerPage": {
+    "heading": "Lend a Hand",
+    "intro": "Every home game and team event runs on parent and community volunteers. Pick a slot that works for you \u2014 all sign-ups go through SignUpGenius.",
+    "signupHtml": "<ul>\n  <li><a href=\"https://www.signupgenius.com/REPLACE-ME\">Concession stand \u2014 2026 home games</a></li>\n  <li><a href=\"https://www.signupgenius.com/REPLACE-ME\">Team meals</a></li>\n</ul>",
+    "closing": "Do not see something that fits, or want to help in another way? Email us and we will find a spot for you."
   }
 }

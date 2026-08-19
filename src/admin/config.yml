@@ -63,17 +63,29 @@ collections:
               - { name: body, label: "Paragraph", widget: text }
               - { name: button, label: "Button text", widget: string }
           - name: volunteer
-            label: "Homepage — Volunteer Section"
+            label: "Homepage — Lend a Hand Band"
             widget: object
             fields:
               - { name: heading, label: "Heading", widget: string }
               - { name: body, label: "Paragraph", widget: text }
-              - { name: formHeading, label: "Form heading", widget: string }
-              - { name: formButton, label: "Submit button text", widget: string }
-              - name: roles
-                label: "Volunteer role options"
-                widget: list
-                field: { name: role, widget: string }
+              - { name: button, label: "Button text", widget: string }
+          - name: volunteerPage
+            label: "Volunteer Page"
+            widget: object
+            fields:
+              - { name: heading, label: "Heading", widget: string }
+              - { name: intro, label: "Intro paragraph", widget: text }
+              - name: signupHtml
+                label: "Sign-up links (HTML)"
+                widget: code
+                default_language: html
+                allow_language_selection: false
+                output_code_only: true
+                hint: >-
+                  Paste your SignUpGenius links here. Copy one <li> line, change
+                  the URL inside the quotes and the words between the > and <,
+                  and add or delete lines as sign-ups change.
+              - { name: closing, label: "Closing paragraph", widget: text }
           - name: donatePage
             label: "Donate Page"
             widget: object
@@ -153,8 +165,6 @@ collections:
           - { name: description, label: "Tagline / meta description", widget: text }
           - { name: url, label: "Site URL", widget: string }
           - { name: contactEmail, label: "Contact email", widget: string }
-          - { name: ein, label: "EIN", widget: string }
-          - { name: mailingAddress, label: "Mailing address", widget: text }
           - { name: storeUrl, label: "Team store link", widget: string }
           - { name: facebookUrl, label: "Facebook link", widget: string }
           - { name: ciacUrl, label: "CIAC schedule link", widget: string }

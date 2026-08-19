@@ -128,7 +128,7 @@ permalink: index.html
   </section>
 
   <section class="section section--navy">
-    <div class="wrap split">
+    <div class="wrap volunteer-band">
       <div>
         <h2 style="color:#fff">{{ pages.volunteer.heading }}</h2>
         <p>{{ pages.volunteer.body }}</p>
@@ -137,22 +137,8 @@ permalink: index.html
           <div style="margin-top:6px;color:#d3e0ee">{{ site.contactEmail }}</div>
         </div>
       </div>
-      <div class="card">
-        <h3>{{ pages.volunteer.formHeading }}</h3>
-        <form class="card-form" name="volunteer" method="POST" data-netlify="true" action="/thank-you.html">
-          <label class="field">Your name
-            <input type="text" name="name" placeholder="Jane Carlson">
-          </label>
-          <label class="field">Email
-            <input type="email" name="email" placeholder="you@email.com">
-          </label>
-          <label class="field">Where can you help?
-            <select name="role">
-              {% for role in pages.volunteer.roles %}<option>{{ role }}</option>{% endfor %}
-            </select>
-          </label>
-          <button class="btn btn--primary btn--block" type="submit">{{ pages.volunteer.formButton }}</button>
-        </form>
+      <div class="volunteer-cta">
+        <a class="btn btn--primary" href="volunteer.html">{{ pages.volunteer.button }}</a>
       </div>
     </div>
   </section>

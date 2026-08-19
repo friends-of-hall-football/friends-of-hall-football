@@ -553,6 +553,47 @@ a:hover { color: var(--navy); }
 }
 
 /* Long unbroken strings (emails, URLs) must not widen the page. */
-.side-meta-value, .contact-label + div, .info-value, .footer-inner {
+.side-meta-value, .contact-label + div, .info-value, .footer-inner,
+.link-stack a, .link-stack span, .side-card p, .signup-list a {
   overflow-wrap: anywhere;
+}
+
+/* ---------- volunteer band + volunteer page ---------- */
+
+.volunteer-band {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  gap: clamp(28px, 5vw, 56px);
+  align-items: center;
+}
+.volunteer-cta { display: flex; justify-content: flex-start; }
+.volunteer-cta .btn { font-size: 26px; padding: 18px 34px; }
+
+/* The sign-up list is editor-supplied HTML, so style it generically. */
+.signup-list { margin-top: 26px; }
+.signup-list ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.signup-list li {
+  border: 2px solid var(--line);
+  border-left: 6px solid var(--blue);
+  border-radius: var(--radius);
+  background: var(--white);
+}
+.signup-list li a {
+  display: block;
+  padding: 20px 24px;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: .01em;
+  text-decoration: none;
+  color: var(--navy);
+  overflow-wrap: anywhere;
+}
+.signup-list li:hover { border-color: var(--blue); background: var(--blue-pale); }
+.signup-list p { color: var(--body); }
+
+@media (max-width: 620px) {
+  .volunteer-cta .btn { width: 100%; justify-content: center; font-size: 22px; }
+  .signup-list li a { font-size: 20px; padding: 16px 18px; }
 }
