@@ -1,0 +1,28 @@
+{
+  "levels": [
+    {
+      "name": "Titan",
+      "amount": "$2,500",
+      "benefits": "Banner at the stadium, logo on this page and in the newsletter, recognition at team dinner.",
+      "slug": "titan"
+    },
+    {
+      "name": "Blue",
+      "amount": "$1,000",
+      "benefits": "Logo on this page and in the newsletter, recognition at a home game.",
+      "slug": "blue"
+    },
+    {
+      "name": "Black",
+      "amount": "$500",
+      "benefits": "Logo on this page and a thank-you on our Facebook page.",
+      "slug": "black"
+    },
+    {
+      "name": "Friend",
+      "amount": "$100",
+      "benefits": "Your family or business name listed on this page for the season.",
+      "slug": "friend"
+    }
+  ]
+}

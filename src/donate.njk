@@ -1,0 +1,65 @@
+---
+title: "Donate — Friends of Hall Football"
+active: donate
+layout: base.njk
+permalink: donate.html
+---
+
+<section class="page-hero">
+    <div class="wrap">
+      <h1>Support the Titans</h1>
+      <p>Every dollar goes straight to the players — equipment, pre-game meals, team gear, and season-end recognition. It takes about a minute.</p>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="donate-layout">
+      <div class="donate-card">
+        <h2>Make a Donation</h2>
+
+        <div class="step">
+          <div class="step-label">Choose an amount</div>
+          <div class="amount-grid">
+            {% for tier in donation.amounts %}
+            <a class="amount amount--link" href="{{ tier.link }}">
+              <span>${{ tier.value }}</span>
+            </a>
+            {% endfor %}
+          </div>
+          <a class="btn btn--outline btn--block" href="{{ donation.customLink }}" style="margin-top:18px">Enter a different amount</a>
+        </div>
+
+        <p class="pay-note">You will be taken to our secure Stripe checkout page, where you can pay by card, Apple&nbsp;Pay, or Google&nbsp;Pay. Friends of Hall Football never sees or stores your card number.</p>
+      </div>
+
+      <div class="side-stack">
+        <div class="side-card side-card--wash">
+          <h3>Your Gift Is Tax-Deductible</h3>
+          <p>Friends of Hall Football is a registered 501(c)(3) nonprofit. You will receive an emailed receipt you can keep for your tax records.</p>
+          <div class="side-meta">
+            <div class="side-meta-label">EIN</div>
+            <div class="side-meta-value">{{ site.ein }}</div>
+          </div>
+        </div>
+
+        <div class="side-card">
+          <h3>Where It Goes</h3>
+          <ul class="bullets">
+            <li>Helmets, pads, and reconditioning between seasons</li>
+            <li>Pre-game and post-game team meals</li>
+            <li>Practice and game-day gear for every player</li>
+            <li>Senior night, banquet, and end-of-season awards</li>
+          </ul>
+        </div>
+
+        <div class="side-card">
+          <h3>Other Ways to Give</h3>
+          <p>Prefer to send a check, or sponsor as a business?</p>
+          <div class="link-stack">
+            <a href="sponsors.html#levels">Business sponsorship levels →</a>
+            <span>Checks payable to Friends of Hall Football, {{ site.mailingAddress }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,14 @@
+[build]
+  command = "npm run build"
+  publish = "_site"
+
+[[redirects]]
+  from = "/news"
+  to = "/index.html#news"
+  status = 301
+
+# Serve the CMS at /admin/
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Frame-Options = "DENY"

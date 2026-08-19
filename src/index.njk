@@ -1,0 +1,163 @@
+---
+title: "Friends of Hall Football — West Hartford, CT"
+active: home
+layout: base.njk
+permalink: index.html
+---
+
+<section class="hero">
+    <div class="hero-scrim"></div>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h1>Support for Your Hall Titans</h1>
+        <p>Friends of Hall Football is the family and community run booster club behind your team. Your support pays for equipment, meals, team gear, and the moments these players will remember for the rest of their lives.</p>
+        <div class="hero-actions">
+          <a class="btn btn--primary" href="donate.html">Make a Donation</a>
+          <a class="btn btn--white" href="{{ site.storeUrl }}" target="_blank" rel="noopener">Shop Titans Gear <svg class="external-icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"></path><path d="M20 4 11 13"></path><path d="M19 15v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4"></path></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-photo"><img src="/images/hero.webp" alt="Hall Titans on the sideline"></div>
+  </section>
+
+  <section class="sponsor-band">
+    <div class="wrap">
+      <div class="section-head section-head--split">
+        <h2>Thank You to Our Sponsors</h2>
+        <div class="sponsor-actions">
+          <a class="btn btn--outline btn--small" href="sponsors.html">See All Sponsors</a>
+          <a class="btn btn--primary btn--small" href="sponsors.html#levels">Become a Sponsor</a>
+        </div>
+      </div>
+      <div class="sponsor-grid">
+        {% for s in sponsors.list %}
+        <div class="sponsor-tile">{% if s.website %}<a href="{{ s.website }}" target="_blank" rel="noopener">{% endif %}<img src="/{{ s.logo }}" alt="{{ s.name }}">{% if s.website %}</a>{% endif %}</div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="schedule">
+    <div class="section-head">
+      <h2>Next Up</h2>
+      <span class="section-note" style="margin:0">2026 Varsity season</span>
+    </div>
+    <div class="next-game">
+      <div class="next-game-panel">
+        <div class="next-game-kicker">{{ nextGame.kicker }}</div>
+        <div class="next-game-title">{{ nextGame.title }}</div>
+        <div class="next-game-info">
+          <div>
+            <div class="info-label">Kickoff</div>
+            <div class="info-value">{{ nextGame.time }}</div>
+          </div>
+          <div>
+            <div class="info-label">Where</div>
+            <div class="info-value">{{ nextGame.site | safe }}</div>
+          </div>
+          {% if nextGame.bus %}
+          <div>
+            <div class="info-label">Bus Leaves</div>
+            <div class="info-value">{{ nextGame.bus }}</div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="next-game-photo"><img src="/images/next-game.png" alt="Hall Titans team photo"></div>
+    </div>
+  </section>
+
+  <section class="section section--tight wrap">
+    <div class="section-head">
+      <h3 style="font-size:32px;color:var(--navy)">Full 2026 Varsity Schedule</h3>
+      <a class="inline-link" href="{{ site.ciacUrl }}" target="_blank" rel="noopener">View on CIAC <svg class="external-icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"></path><path d="M20 4 11 13"></path><path d="M19 15v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4"></path></svg></a>
+    </div>
+    <div class="schedule">
+      <div class="schedule-head">
+        <div>Date</div>
+        <div>Time</div>
+        <div>Opponent</div>
+        <div>Site</div>
+      </div>
+        {% for g in schedule.games %}
+        <div class="game-row{% if g.home %} is-home{% endif %}">
+          <div class="game-date">{{ g.date }}</div>
+          <div class="game-time">{{ g.time }}</div>
+          <div class="game-opponent"><strong>{{ g.opponent }}</strong><span class="game-tag">{{ g.type }}</span></div>
+          <div class="game-site">{{ g.site }}</div>
+        </div>
+        {% endfor %}
+    </div>
+    <p class="section-note">Dates and times occasionally change. The <a href="{{ site.ciacUrl }}" target="_blank" rel="noopener">official CIAC schedule</a> is always the source of record.</p>
+  </section>
+
+  <section class="section section--wash" id="news">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Titans News</h2>
+        <a class="inline-link" href="{{ site.facebookUrl }}" target="_blank" rel="noopener">Follow us on Facebook</a>
+      </div>
+      <div class="news-grid">
+        {% for post in collections.posts | reverse %}
+        <article class="post-card">
+          {% if post.data.image %}<div class="post-card-photo"><img src="/{{ post.data.image }}" alt=""></div>{% endif %}
+          <div class="post-card-body">
+            <div class="post-date">{{ post.data.date | postDate }}</div>
+            <h3>{{ post.data.title }}</h3>
+            {{ post.content | safe }}
+            <a class="post-more" href="{{ post.url }}">Read more &rarr;</a>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="newsletter-band">
+      <div>
+        <div class="eyebrow">Hall Quarterly</div>
+        <h2>Read the Newsletter</h2>
+        <p>Team updates, player recognition, fundraiser dates, and everything happening around the program — sent out each quarter and always available to read online.</p>
+        <div class="hero-actions" style="margin-top:26px">
+          <a class="btn btn--outline" href="newsletter.html">Read the Latest Issue</a>
+        </div>
+      </div>
+      <div class="newsletter-cover"><img src="/images/newsletter-cover.png" alt="Hall Quarterly newsletter cover"></div>
+    </div>
+  </section>
+
+  <section class="section section--navy">
+    <div class="wrap split">
+      <div>
+        <h2 style="color:#fff">Lend a Hand on Game Day</h2>
+        <p>No experience needed and no long commitment. Grill burgers, work the gate, run the concession stand, or help load equipment. Tell us what sounds good and we will be in touch with the next opportunity.</p>
+        <div style="margin-top:28px">
+          <div class="contact-label">Questions?</div>
+          <div style="margin-top:6px;color:#d3e0ee">{{ site.contactEmail }}</div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Volunteer Sign-Up</h3>
+        <form class="card-form" method="post" name="volunteer" method="POST" data-netlify="true" action="/thank-you.html">
+          <label class="field">Your name
+            <input type="text" name="name" placeholder="Jane Carlson">
+          </label>
+          <label class="field">Email
+            <input type="email" name="email" placeholder="you@email.com">
+          </label>
+          <label class="field">Where can you help?
+            <select name="role">
+              <option>Concession stand</option>
+              <option>Grill / team meals</option>
+              <option>Gate and tickets</option>
+              <option>Equipment and field setup</option>
+              <option>Photography</option>
+              <option>Wherever you need me</option>
+            </select>
+          </label>
+          <button class="btn btn--primary btn--block" type="submit">Count Me In</button>
+        </form>
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,10 @@
+---
+layout: base.njk
+---
+<section class="section wrap">
+  <p><a class="inline-link" href="/index.html#news">&larr; All news</a></p>
+  <div class="section-head"><h2>{{ title }}</h2></div>
+  <p class="post-date">{{ date | postDate }}</p>
+  {% if image %}<p><img src="/{{ image }}" alt="" style="max-width:100%;border-radius:12px"></p>{% endif %}
+  {{ content | safe }}
+</section>

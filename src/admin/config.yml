@@ -1,0 +1,103 @@
+backend:
+  name: github
+  repo: friends-of-hall-football/friends-of-hall-football
+  branch: main
+
+media_folder: "src/images"
+public_folder: "/images"
+
+collections:
+  # ---------- News posts ----------
+  - name: posts
+    label: "News Posts"
+    label_singular: "News Post"
+    folder: "src/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} — {{date | date('MMM D, YYYY')}}"
+    fields:
+      - { name: title, label: "Headline", widget: string }
+      - { name: date, label: "Date", widget: datetime, date_format: "YYYY-MM-DD", time_format: false }
+      - { name: image, label: "Photo", widget: image, required: false, media_folder: "/src/images/posts", public_folder: "/images/posts" }
+      - { name: body, label: "Post", widget: markdown }
+
+  # ---------- Everything else ----------
+  - name: data
+    label: "Site Content"
+    files:
+      - name: schedule
+        label: "Game Schedule"
+        file: "src/_data/schedule.json"
+        fields:
+          - name: games
+            label: "Games"
+            widget: list
+            label_singular: "Game"
+            summary: "{{fields.date}} — {{fields.opponent}}"
+            fields:
+              - { name: date, label: "Date (e.g. SAT 10/4)", widget: string }
+              - { name: time, label: "Kickoff time", widget: string }
+              - { name: opponent, label: "Opponent (start with 'vs' or 'at')", widget: string }
+              - { name: type, label: "Type", widget: select, options: ["League · Home", "League", "Scrimmage", "Playoff"] }
+              - { name: home, label: "Home game?", widget: boolean, default: false }
+              - { name: site, label: "Location", widget: string }
+              - { name: bus, label: "Bus leaves (optional)", widget: string, required: false }
+
+      - name: sponsors
+        label: "Sponsors"
+        file: "src/_data/sponsors.json"
+        fields:
+          - name: list
+            label: "Sponsors"
+            widget: list
+            label_singular: "Sponsor"
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: "Business name", widget: string }
+              - { name: logo, label: "Logo", widget: image, media_folder: "/src/images/sponsors", public_folder: "/images/sponsors" }
+              - { name: tier, label: "Level", widget: string, required: false }
+              - { name: website, label: "Website", widget: string, required: false }
+
+      - name: sponsorLevels
+        label: "Sponsorship Levels"
+        file: "src/_data/sponsorLevels.json"
+        fields:
+          - name: levels
+            label: "Levels"
+            widget: list
+            label_singular: "Level"
+            summary: "{{fields.name}} — ${{fields.amount}}"
+            fields:
+              - { name: name, label: "Level name", widget: string }
+              - { name: slug, label: "Style key (titan / blue / black / friend)", widget: string }
+              - { name: amount, label: "Amount", widget: string }
+              - { name: benefits, label: "What they get", widget: list, field: { name: item, widget: string } }
+
+      - name: donation
+        label: "Donation Buttons"
+        file: "src/_data/donation.json"
+        fields:
+          - name: amounts
+            label: "Preset amounts"
+            widget: list
+            label_singular: "Amount"
+            summary: "${{fields.value}}"
+            fields:
+              - { name: value, label: "Dollar amount", widget: string }
+              - { name: link, label: "Stripe Payment Link URL", widget: string }
+          - { name: customLink, label: "Custom-amount Payment Link URL", widget: string }
+
+      - name: site
+        label: "Site Settings"
+        file: "src/_data/site.json"
+        fields:
+          - { name: name, label: "Organization name", widget: string }
+          - { name: description, label: "Tagline / meta description", widget: text }
+          - { name: url, label: "Site URL", widget: string }
+          - { name: contactEmail, label: "Contact email", widget: string }
+          - { name: ein, label: "EIN", widget: string }
+          - { name: mailingAddress, label: "Mailing address", widget: text }
+          - { name: storeUrl, label: "Team store link", widget: string }
+          - { name: facebookUrl, label: "Facebook link", widget: string }
+          - { name: ciacUrl, label: "CIAC schedule link", widget: string }
+          - { name: newsletterUrl, label: "Current newsletter link", widget: string }

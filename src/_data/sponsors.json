@@ -1,0 +1,28 @@
+{
+  "list": [
+    {
+      "name": "Harry's Pizza",
+      "logo": "images/sponsors/harrys.webp",
+      "tier": "",
+      "website": ""
+    },
+    {
+      "name": "The Brownstone",
+      "logo": "images/sponsors/the-brownstone.webp",
+      "tier": "",
+      "website": ""
+    },
+    {
+      "name": "First Peak Construction",
+      "logo": "images/sponsors/first-peak-construction.webp",
+      "tier": "",
+      "website": ""
+    },
+    {
+      "name": "Mozz & Co",
+      "logo": "images/sponsors/mozz-and-co.webp",
+      "tier": "",
+      "website": ""
+    }
+  ]
+}

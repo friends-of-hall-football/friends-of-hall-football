@@ -1,0 +1,17 @@
+{
+  "amounts": [
+    {
+      "value": "25",
+      "link": "https://buy.stripe.com/REPLACE_25"
+    },
+    {
+      "value": "50",
+      "link": "https://buy.stripe.com/REPLACE_50"
+    },
+    {
+      "value": "100",
+      "link": "https://buy.stripe.com/REPLACE_100"
+    }
+  ],
+  "customLink": "https://buy.stripe.com/REPLACE_CUSTOM"
+}
