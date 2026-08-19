@@ -90,24 +90,20 @@ permalink: index.html
     <p class="section-note">Dates and times occasionally change. The <a href="{{ site.ciacUrl }}" target="_blank" rel="noopener">official CIAC schedule</a> is always the source of record.</p>
   </section>
 
-  <section class="section section--wash" id="news">
+
+<section class="section section--wash">
     <div class="wrap">
-      <div class="section-head">
-        <h2>{{ pages.newsSection.heading }}</h2>
-              </div>
-      <div class="news-grid">
-        {% for post in collections.posts | reverse %}
-        <article class="post-card">
-          {% if post.data.image %}<div class="post-card-photo"><img src="{{ post.data.image | asset }}" alt=""></div>{% endif %}
-          <div class="post-card-body">
-            <div class="post-date">{{ post.data.date | postDate }}</div>
-            <h3>{{ post.data.title }}</h3>
-            {{ post.content | safe }}
-            <a class="post-more" href="{{ post.url }}">Read more &rarr;</a>
-          </div>
-        </article>
-        {% endfor %}
+    <div class="newsletter-band">
+      <div>
+        <div class="eyebrow">{{ pages.newsletterBand.eyebrow }}</div>
+        <h2>{{ pages.newsletterBand.heading }}</h2>
+        <p>{{ pages.newsletterBand.body }}</p>
+        <div class="hero-actions" style="margin-top:26px">
+          <a class="btn btn--outline" href="newsletter.html">{{ pages.newsletterBand.button }}</a>
+        </div>
       </div>
+      <div class="newsletter-cover"><img src="{{ pages.newsletterBand.image | asset }}" alt="Hall Quarterly newsletter cover"></div>
+    </div>
     </div>
   </section>
 
@@ -136,20 +132,6 @@ permalink: index.html
     </div>
   </section>
 
-<section class="section wrap">
-    <div class="newsletter-band">
-      <div>
-        <div class="eyebrow">{{ pages.newsletterBand.eyebrow }}</div>
-        <h2>{{ pages.newsletterBand.heading }}</h2>
-        <p>{{ pages.newsletterBand.body }}</p>
-        <div class="hero-actions" style="margin-top:26px">
-          <a class="btn btn--outline" href="newsletter.html">{{ pages.newsletterBand.button }}</a>
-        </div>
-      </div>
-      <div class="newsletter-cover"><img src="{{ pages.newsletterBand.image | asset }}" alt="Hall Quarterly newsletter cover"></div>
-    </div>
-  </section>
-
   <section class="section section--navy">
     <div class="wrap volunteer-band">
       <div>
@@ -165,3 +147,23 @@ permalink: index.html
       </div>
     </div>
   </section>
+
+  <section class="section wrap" id="news">
+      <div class="section-head">
+        <h2>{{ pages.newsSection.heading }}</h2>
+              </div>
+      <div class="news-grid">
+        {% for post in collections.posts | reverse %}
+        <article class="post-card">
+          {% if post.data.image %}<div class="post-card-photo"><img src="{{ post.data.image | asset }}" alt=""></div>{% endif %}
+          <div class="post-card-body">
+            <div class="post-date">{{ post.data.date | postDate }}</div>
+            <h3>{{ post.data.title }}</h3>
+            {{ post.content | safe }}
+            <a class="post-more" href="{{ post.url }}">Read more &rarr;</a>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+  </section>
+

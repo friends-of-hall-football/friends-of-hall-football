@@ -333,6 +333,7 @@ a:hover { color: var(--navy); }
   border-radius: 14px;
   padding: clamp(26px, 5vw, 44px) clamp(22px, 5vw, 44px) clamp(30px, 5vw, 48px);
 }
+.newsletter-band { background: var(--white); }
 .newsletter-band h2 { margin-top: 8px; line-height: 1; }
 .newsletter-band p { margin: 18px 0 0; font-size: 19px; color: var(--body); max-width: 34em; text-wrap: pretty; }
 .newsletter-cover { height: 260px; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
