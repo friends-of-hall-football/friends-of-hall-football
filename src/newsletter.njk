@@ -27,30 +27,15 @@ permalink: newsletter.html
   <section class="section section--tight wrap">
     <h2 style="font-size:clamp(28px,6.5vw,38px)">Past Issues</h2>
     <div class="issue-grid" style="margin-top:22px">
+      {% for issue in newsletterIssues.issues %}
       <article class="issue-card">
-        <div class="issue-card-photo"><img src="/images/newsletter-cover.png" alt=""></div>
+        <div class="issue-card-photo"><img src="/{{ issue.image }}" alt=""></div>
         <div class="issue-card-body">
-          <div class="issue-season">Spring 2026</div>
-          <h3>Offseason &amp; Weight Room</h3>
-          <a class="post-more" href="{{ site.newsletterUrl }}">Read issue →</a>
+          <div class="issue-season">{{ issue.season }}</div>
+          <h3>{{ issue.title }}</h3>
+          <a class="post-more" href="{{ issue.url or site.newsletterUrl }}">Read issue &rarr;</a>
         </div>
       </article>
-      <article class="issue-card">
-        <div class="issue-card-photo"><img src="/images/newsletter-cover.png" alt=""></div>
-        <div class="issue-card-body">
-          <div class="issue-season">Winter 2025</div>
-          <h3>Season Wrap-Up</h3>
-          <a class="post-more" href="{{ site.newsletterUrl }}">Read issue →</a>
-        </div>
-      </article>
-      <article class="issue-card">
-        <div class="issue-card-photo"><img src="/images/newsletter-cover.png" alt=""></div>
-        <div class="issue-card-body">
-          <div class="issue-season">Fall 2025</div>
-          <h3>Kickoff Issue</h3>
-          <a class="post-more" href="{{ site.newsletterUrl }}">Read issue →</a>
-        </div>
-      </article>
+      {% endfor %}
     </div>
-    <p class="section-note">Placeholder entries — send me the links to past issues and I will wire them up.</p>
   </section>

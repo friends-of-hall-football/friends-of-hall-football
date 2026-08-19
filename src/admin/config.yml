@@ -37,6 +37,7 @@ collections:
               - { name: body, label: "Paragraph", widget: text }
               - { name: primaryButton, label: "Blue button text", widget: string }
               - { name: secondaryButton, label: "White button text", widget: string }
+              - { name: image, label: "Banner photo", widget: image, media_folder: "/src/images", public_folder: "/images" }
           - name: sponsorBand
             label: "Homepage — Sponsor Strip"
             widget: object
@@ -49,6 +50,7 @@ collections:
               - { name: nextUpHeading, label: "Next Up heading", widget: string }
               - { name: nextUpNote, label: "Small note beside it", widget: string }
               - { name: fullHeading, label: "Full schedule heading", widget: string }
+              - { name: nextUpImage, label: "Next Up photo", widget: image, media_folder: "/src/images", public_folder: "/images" }
           - name: newsSection
             label: "Homepage — News"
             widget: object
@@ -62,6 +64,7 @@ collections:
               - { name: heading, label: "Heading", widget: string }
               - { name: body, label: "Paragraph", widget: text }
               - { name: button, label: "Button text", widget: string }
+              - { name: image, label: "Newsletter cover", widget: image, media_folder: "/src/images", public_folder: "/images" }
           - name: volunteer
             label: "Homepage — Lend a Hand Band"
             widget: object
@@ -69,6 +72,7 @@ collections:
               - { name: heading, label: "Heading", widget: string }
               - { name: body, label: "Paragraph", widget: text }
               - { name: button, label: "Button text", widget: string }
+              - { name: image, label: "Newsletter cover", widget: image, media_folder: "/src/images", public_folder: "/images" }
           - name: volunteerPage
             label: "Volunteer Page"
             widget: object
@@ -94,6 +98,21 @@ collections:
               - { name: amountLabel, label: "Label above the amounts", widget: string }
               - { name: customButton, label: "Custom-amount button text", widget: string }
               - { name: payNote, label: "Note below the buttons", widget: text }
+
+      - name: newsletterIssues
+        label: "Past Newsletter Issues"
+        file: "src/_data/newsletterIssues.json"
+        fields:
+          - name: issues
+            label: "Issues"
+            widget: list
+            label_singular: "Issue"
+            summary: "{{fields.season}} — {{fields.title}}"
+            fields:
+              - { name: season, label: "Season (e.g. Fall 2026)", widget: string }
+              - { name: title, label: "Issue title", widget: string }
+              - { name: image, label: "Cover image", widget: image, media_folder: "/src/images", public_folder: "/images" }
+              - { name: url, label: "Link to this issue", widget: string, required: false }
 
       - name: schedule
         label: "Game Schedule"

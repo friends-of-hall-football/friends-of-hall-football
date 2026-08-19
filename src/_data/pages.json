@@ -3,7 +3,8 @@
     "headline": "Support for Your Hall Titans",
     "body": "Friends of Hall Football is the family and community run booster club behind your team. Your support pays for equipment, meals, team gear, and the moments these players will remember for the rest of their lives.",
     "primaryButton": "Make a Donation",
-    "secondaryButton": "Shop Titans Gear"
+    "secondaryButton": "Shop Titans Gear",
+    "image": "images/hero.webp"
   },
   "sponsorBand": {
     "heading": "Thank You to Our Sponsors"
@@ -11,7 +12,8 @@
   "scheduleSection": {
     "nextUpHeading": "Next Up",
     "nextUpNote": "2026 Varsity season",
-    "fullHeading": "Full 2026 Varsity Schedule"
+    "fullHeading": "Full 2026 Varsity Schedule",
+    "nextUpImage": "images/next-game.png"
   },
   "newsSection": {
     "heading": "Titans News"
@@ -20,7 +22,8 @@
     "eyebrow": "Hall Quarterly",
     "heading": "Read the Newsletter",
     "body": "Team updates, player recognition, fundraiser dates, and everything happening around the program \u2014 sent out each quarter and always available to read online.",
-    "button": "Read the Latest Issue"
+    "button": "Read the Latest Issue",
+    "image": "images/newsletter-cover.png"
   },
   "volunteer": {
     "heading": "Lend a Hand",

@@ -1,0 +1,22 @@
+{
+  "issues": [
+    {
+      "season": "Spring 2026",
+      "title": "Offseason & Weight Room",
+      "image": "images/newsletter-cover.png",
+      "url": ""
+    },
+    {
+      "season": "Winter 2025",
+      "title": "Season Wrap-Up",
+      "image": "images/newsletter-cover.png",
+      "url": ""
+    },
+    {
+      "season": "Fall 2025",
+      "title": "Kickoff Issue",
+      "image": "images/newsletter-cover.png",
+      "url": ""
+    }
+  ]
+}
