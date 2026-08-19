@@ -62,6 +62,12 @@ collections:
             widget: object
             fields:
               - { name: heading, label: "Heading", widget: string }
+          - name: socialBand
+            label: "Homepage — Follow the Titans"
+            widget: object
+            fields:
+              - { name: heading, label: "Heading", widget: string }
+              - { name: body, label: "Paragraph", widget: text }
           - name: newsletterBand
             label: "Homepage — Newsletter Promo"
             widget: object
@@ -196,5 +202,6 @@ collections:
           - { name: contactEmail, label: "Contact email", widget: string }
           - { name: storeUrl, label: "Team store link", widget: string }
           - { name: facebookUrl, label: "Facebook link", widget: string }
+          - { name: instagramUrl, label: "Instagram link", widget: string, required: false }
           - { name: ciacUrl, label: "CIAC schedule link", widget: string }
           - { name: newsletterUrl, label: "Current newsletter link", widget: string }
