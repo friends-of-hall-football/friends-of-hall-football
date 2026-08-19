@@ -1,7 +1,7 @@
 ---
-title: "End of Summer Testing"
+title: End of Summer Lifts and Testing
 date: 2026-08-13
-image: images/posts/end-of-summer-testing.png
+image: /images/posts/INSTA_End_Summer_Lifts.jpg
 ---
 
-The squad closed out summer lifting with max testing in the weight room. Big jumps across the board, and a lot of proud parents watching from the doorway.
+The squad closed out summer lifting with max testing in the weight room.
