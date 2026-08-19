@@ -140,8 +140,12 @@ collections:
             fields:
               - { name: name, label: "Level name", widget: string }
               - { name: slug, label: "Style key (titan / blue / black / friend)", widget: string }
-              - { name: amount, label: "Amount", widget: string }
-              - { name: benefits, label: "What they get", widget: list, field: { name: item, widget: string } }
+              - { name: amount, label: "Amount (numbers only, no $)", widget: string }
+              - name: benefits
+                label: "What they get"
+                widget: list
+                label_singular: "Benefit"
+                field: { name: item, label: "Benefit", widget: string }
 
       - name: donation
         label: "Donation Buttons"

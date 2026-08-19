@@ -31,7 +31,7 @@ permalink: sponsors.html
         <div class="tier tier--{{ t.slug }}">
           <div class="tier-name">{{ t.name }}</div>
           <div class="tier-amount">${{ t.amount }}</div>
-          <ul>{% for b in t.benefits %}<li>{{ b }}</li>{% endfor %}</ul>
+          <ul>{% if t.benefits is string %}<li>{{ t.benefits }}</li>{% else %}{% for b in t.benefits %}<li>{{ b }}</li>{% endfor %}{% endif %}</ul>
         </div>
         {% endfor %}
       </div>
