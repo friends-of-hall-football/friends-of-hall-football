@@ -1,22 +1,22 @@
 {
   "issues": [
     {
-      "season": "Spring 2026",
-      "title": "Offseason & Weight Room",
-      "image": "images/newsletter-cover.png",
-      "url": ""
+      "season": "Spring 2026 - April",
+      "title": "--",
+      "image": "/images/Titans_Blue_Logo.png",
+      "url": "https://view.gogipper.com/page/4021278"
     },
     {
-      "season": "Winter 2025",
-      "title": "Season Wrap-Up",
-      "image": "images/newsletter-cover.png",
-      "url": ""
+      "season": "Winter 2025 - December",
+      "title": "--",
+      "image": "/images/Titans_Blue_Logo.png",
+      "url": "https://view.gogipper.com/page/3645710"
     },
     {
-      "season": "Fall 2025",
+      "season": "Fall 2025 - September",
       "title": "Kickoff Issue",
-      "image": "images/newsletter-cover.png",
-      "url": ""
+      "image": "/images/Titans_Blue_Logo.png",
+      "url": "https://view.gogipper.com/page/3286253"
     }
   ]
 }
