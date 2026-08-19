@@ -1,7 +1,7 @@
 ---
-title: "Meet Your 2026 Captain: Ben Carlson"
+title: West Hartford - Youth Football Clinics
 date: 2026-07-28
-image: images/posts/2026-captain-ben-carlson.png
+image: /images/posts/INSTA_Youth_Clinic.jpg
 ---
 
-Number 23 leads the Titans this fall. Ben also took Lifter of the Week honors during summer testing.
+Builds skills, Build confidence, and have a great time with a talented crew of WH H.S. athletes.
