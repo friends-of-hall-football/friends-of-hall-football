@@ -1,6 +1,6 @@
 ---
 title: West Hartford - Youth Football Clinics
-date: 2026-07-28
+date: 2026-07-04
 image: /images/posts/INSTA_Youth_Clinic.jpg
 ---
 
