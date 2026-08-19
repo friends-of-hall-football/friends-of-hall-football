@@ -29,7 +29,7 @@ permalink: newsletter.html
     <div class="issue-grid" style="margin-top:22px">
       {% for issue in newsletterIssues.issues %}
       <article class="issue-card">
-        <div class="issue-card-photo"><img src="/{{ issue.image }}" alt=""></div>
+        <div class="issue-card-photo"><img src="{{ issue.image | asset }}" alt=""></div>
         <div class="issue-card-body">
           <div class="issue-season">{{ issue.season }}</div>
           <h3>{{ issue.title }}</h3>

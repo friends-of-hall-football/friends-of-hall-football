@@ -3,6 +3,12 @@ backend:
   repo: friends-of-hall-football/friends-of-hall-football
   branch: main
 
+# Turn off Sveltia's built-in stock photo sources (Unsplash, Pexels, etc.)
+# so editors only pick from images actually uploaded to this site.
+media_libraries:
+  stock_assets:
+    providers: []
+
 media_folder: "src/images"
 public_folder: "/images"
 

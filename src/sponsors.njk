@@ -17,7 +17,7 @@ permalink: sponsors.html
     <p class="section-lede" style="margin-top:8px">Every sponsor below supports Hall football this season.</p>
     <div class="sponsor-grid sponsor-grid--page">
       {% for sp in sponsors.list %}
-      <div class="sponsor-tile">{% if sp.website %}<a href="{{ sp.website }}" target="_blank" rel="noopener">{% endif %}<img src="/{{ sp.logo }}" alt="{{ sp.name }}">{% if sp.website %}</a>{% endif %}</div>
+      <div class="sponsor-tile">{% if sp.website %}<a href="{{ sp.website }}" target="_blank" rel="noopener">{% endif %}<img src="{{ sp.logo | asset }}" alt="{{ sp.name }}">{% if sp.website %}</a>{% endif %}</div>
       {% endfor %}
     </div>
   </section>

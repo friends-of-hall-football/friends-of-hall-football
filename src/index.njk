@@ -17,7 +17,7 @@ permalink: index.html
         </div>
       </div>
     </div>
-    <div class="hero-photo"><img src="/{{ pages.hero.image }}" alt="Hall Titans on the sideline"></div>
+    <div class="hero-photo"><img src="{{ pages.hero.image | asset }}" alt="Hall Titans on the sideline"></div>
   </section>
 
   <section class="sponsor-band">
@@ -31,7 +31,7 @@ permalink: index.html
       </div>
       <div class="sponsor-grid">
         {% for s in sponsors.list %}
-        <div class="sponsor-tile">{% if s.website %}<a href="{{ s.website }}" target="_blank" rel="noopener">{% endif %}<img src="/{{ s.logo }}" alt="{{ s.name }}">{% if s.website %}</a>{% endif %}</div>
+        <div class="sponsor-tile">{% if s.website %}<a href="{{ s.website }}" target="_blank" rel="noopener">{% endif %}<img src="{{ s.logo | asset }}" alt="{{ s.name }}">{% if s.website %}</a>{% endif %}</div>
         {% endfor %}
       </div>
     </div>
@@ -63,7 +63,7 @@ permalink: index.html
           {% endif %}
         </div>
       </div>
-      <div class="next-game-photo"><img src="/{{ pages.scheduleSection.nextUpImage }}" alt="Hall Titans team photo"></div>
+      <div class="next-game-photo"><img src="{{ pages.scheduleSection.nextUpImage | asset }}" alt="Hall Titans team photo"></div>
     </div>
   </section>
 
@@ -100,7 +100,7 @@ permalink: index.html
       <div class="news-grid">
         {% for post in collections.posts | reverse %}
         <article class="post-card">
-          {% if post.data.image %}<div class="post-card-photo"><img src="/{{ post.data.image }}" alt=""></div>{% endif %}
+          {% if post.data.image %}<div class="post-card-photo"><img src="{{ post.data.image | asset }}" alt=""></div>{% endif %}
           <div class="post-card-body">
             <div class="post-date">{{ post.data.date | postDate }}</div>
             <h3>{{ post.data.title }}</h3>
@@ -123,7 +123,7 @@ permalink: index.html
           <a class="btn btn--outline" href="newsletter.html">{{ pages.newsletterBand.button }}</a>
         </div>
       </div>
-      <div class="newsletter-cover"><img src="/{{ pages.newsletterBand.image }}" alt="Hall Quarterly newsletter cover"></div>
+      <div class="newsletter-cover"><img src="{{ pages.newsletterBand.image | asset }}" alt="Hall Quarterly newsletter cover"></div>
     </div>
   </section>
 
