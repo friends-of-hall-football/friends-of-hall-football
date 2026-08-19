@@ -4,7 +4,7 @@
     "body": "Friends of Hall Football is the family and community run booster club behind your team. Your support pays for equipment, meals, team gear, and the moments these players will remember for the rest of their lives.",
     "primaryButton": "Make a Donation",
     "secondaryButton": "Shop Titans Gear",
-    "image": "/images/hero.webp"
+    "image": "/images/_Hero.jpg"
   },
   "sponsorBand": {
     "heading": "Thank You to Our Sponsors"
@@ -13,7 +13,7 @@
     "nextUpHeading": "Next Up",
     "nextUpNote": "2026 Varsity season",
     "fullHeading": "Full 2026 Varsity Schedule",
-    "nextUpImage": "/images/next-game.png"
+    "nextUpImage": "/images/_Next_Game.jpg"
   },
   "newsSection": {
     "heading": "Titans News"
@@ -21,25 +21,26 @@
   "newsletterBand": {
     "eyebrow": "Hall Quarterly",
     "heading": "Read the Newsletter",
-    "body": "Team updates, player recognition, fundraiser dates, and everything happening around the program \u2014 sent out each quarter and always available to read online.",
+    "body": "Team updates, player recognition, fundraiser dates, and everything happening around the program — sent out each quarter and always available to read online.",
     "button": "Read the Latest Issue",
-    "image": "/images/newsletter-cover.png"
+    "image": "/images/_Schedule.jpg"
   },
   "volunteer": {
     "heading": "Lend a Hand",
     "body": "No experience needed and no long commitment. Grill burgers, work the gate, run the concession stand, or help load equipment. Sign up for whatever fits your schedule.",
-    "button": "See Volunteer Opportunities"
+    "button": "See Volunteer Opportunities",
+    "image": "/images/_Newsletter.jpg"
+  },
+  "volunteerPage": {
+    "heading": "Lend a Hand",
+    "intro": "Every home game and team event runs on parent and community volunteers. Pick a slot that works for you — all sign-ups go through SignUpGenius.",
+    "signupHtml": "<ul>\n  <li><a href=\"https://www.signupgenius.com/go/10C0844AEA822A1FAC25-65203612-hall\">Sandwich Sign-up</a></li>\n  <li><a href=\"https://www.signupgenius.com/go/10C0844AEA822A1FAC25-65194674-pbj\">Team Dinners</a></li>\n</ul>",
+    "closing": "Do not see something that fits, or want to help in another way? Email us and we will find a spot for you."
   },
   "donatePage": {
     "cardHeading": "Make a Donation",
     "amountLabel": "Choose an amount",
     "customButton": "Enter a different amount",
-    "payNote": "You will be taken to our secure Stripe checkout page, where you can pay by card, Apple\u00a0Pay, or Google\u00a0Pay. Friends of Hall Football never sees or stores your card number."
-  },
-  "volunteerPage": {
-    "heading": "Lend a Hand",
-    "intro": "Every home game and team event runs on parent and community volunteers. Pick a slot that works for you \u2014 all sign-ups go through SignUpGenius.",
-    "signupHtml": "<ul>\n  <li><a href=\"https://www.signupgenius.com/REPLACE-ME\">Concession stand \u2014 2026 home games</a></li>\n  <li><a href=\"https://www.signupgenius.com/REPLACE-ME\">Team meals</a></li>\n</ul>",
-    "closing": "Do not see something that fits, or want to help in another way? Email us and we will find a spot for you."
+    "payNote": "You will be taken to our secure Stripe checkout page, where you can pay by card, Apple Pay, or Google Pay. Friends of Hall Football never sees or stores your card number."
   }
 }
