@@ -13,6 +13,12 @@ module.exports = function (eleventyConfig) {
     return "/" + String(p).trim().replace(/^\/+/, "");
   });
 
+  // Season keys (e.g. "2026", "2025") sorted newest first, for the roster tabs.
+  eleventyConfig.addFilter("seasonKeys", (obj) => {
+    if (!obj || typeof obj !== "object") return [];
+    return Object.keys(obj).sort().reverse();
+  });
+
   // "2026-08-13" -> "August 13, 2026"
   eleventyConfig.addFilter("postDate", (value) => {
     const d = value instanceof Date ? value : new Date(value);
