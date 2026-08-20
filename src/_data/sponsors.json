@@ -4,25 +4,25 @@
       "name": "Harry's Pizza",
       "logo": "images/sponsors/harrys.webp",
       "tier": "",
-      "website": ""
+      "website": "https://harryswh.com/"
     },
     {
       "name": "The Brownstone",
       "logo": "images/sponsors/the-brownstone.webp",
       "tier": "",
-      "website": ""
+      "website": "https://thebrownstonewh.com/"
     },
     {
       "name": "First Peak Construction",
       "logo": "images/sponsors/first-peak-construction.webp",
       "tier": "",
-      "website": ""
+      "website": "https://firstpeakconstruction.com/"
     },
     {
       "name": "Mozz & Co",
       "logo": "images/sponsors/mozz-and-co.webp",
       "tier": "",
-      "website": ""
+      "website": "https://www.mozznco.com/"
     }
   ]
 }
