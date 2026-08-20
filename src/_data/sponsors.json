@@ -23,6 +23,18 @@
       "logo": "images/sponsors/mozz-and-co.webp",
       "tier": "",
       "website": "https://www.mozznco.com/"
+    },
+    {
+      "name": "Penn Lincoln Strategies",
+      "logo": "/images/sponsors/Penn_Lincoln.png",
+      "tier": "",
+      "website": "https://www.pennlincoln.com/"
+    },
+    {
+      "name": "Pediatric and Adolescent Speech Therapy Associates",
+      "logo": "/images/sponsors/PASTA_Speech.jpg",
+      "tier": "",
+      "website": "https://www.helpkidstalk.com/"
     }
   ]
 }
