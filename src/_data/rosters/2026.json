@@ -1,0 +1,239 @@
+{
+  "season": "2026",
+  "players": [
+    {
+      "number": "9",
+      "name": "Eros Diaz",
+      "grade": "Jr.",
+      "position": "DB, ATH",
+      "height": "5'9\"",
+      "weight": "146 lbs",
+      "team": "Varsity"
+    },
+    {
+      "number": "10",
+      "name": "Jordan Scher",
+      "grade": "Jr.",
+      "position": "WR, DB",
+      "height": "5'9\"",
+      "weight": "155 lbs",
+      "team": "Varsity"
+    },
+    {
+      "number": "11",
+      "name": "Bobby Biondi",
+      "grade": "Sr.",
+      "position": "DE, HB",
+      "height": "6'6\"",
+      "weight": "215 lbs",
+      "team": "Varsity"
+    },
+    {
+      "number": "12",
+      "name": "Drew MacGilpin",
+      "grade": "Sr.",
+      "position": "HB",
+      "height": "5'11\"",
+      "weight": "155 lbs",
+      "team": "Varsity"
+    },
+    {
+      "number": "13",
+      "name": "Lincoln Ruel",
+      "grade": "Sr.",
+      "position": "WR, FS, QB",
+      "height": "6'2\"",
+      "weight": "162 lbs",
+      "team": "Varsity"
+    },
+    {
+      "number": "14",
+      "name": "Spencer Zazzaro",
+      "grade": "Sr.",
+      "position": "WR",
+      "height": "5'9\"",
+      "weight": "155 lbs",
+      "team": "Varsity"
+    },
+    {
+      "number": "15",
+      "name": "Colby Kessler",
+      "grade": "Jr.",
+      "position": "OLB, WR",
+      "height": "5'6\"",
+      "weight": "145 lbs",
+      "team": "Varsity"
+    },
+    {
+      "number": "16",
+      "name": "Noah Kabakoff",
+      "grade": "Sr.",
+      "position": "QB, K",
+      "height": "6'1\"",
+      "weight": "178 lbs",
+      "team": "Varsity"
+    },
+    {
+      "number": "17",
+      "name": "Josh Almodovar",
+      "grade": "Sr.",
+      "position": "WR",
+      "height": "6'1\"",
+      "weight": "148 lbs",
+      "team": "Varsity"
+    },
+    {
+      "number": "18",
+      "name": "Evan Riddle",
+      "grade": "Sr.",
+      "position": "ILB",
+      "height": "5'10\"",
+      "weight": "174 lbs",
+      "team": "Varsity"
+    },
+    {
+      "number": "22",
+      "name": "Vitor Nogueira",
+      "grade": "Jr.",
+      "position": "ILB, RB",
+      "height": "5'6\"",
+      "weight": "179 lbs",
+      "team": "Varsity"
+    },
+    {
+      "number": "23",
+      "name": "Ben Carlson",
+      "grade": "Sr.",
+      "position": "RB, OLB",
+      "height": "5'11\"",
+      "weight": "185 lbs",
+      "team": "Varsity"
+    },
+    {
+      "number": "24",
+      "name": "Isaiah Gaston",
+      "grade": "Sr.",
+      "position": "WR, ATH",
+      "height": "6'2\"",
+      "weight": "187 lbs",
+      "team": "Varsity"
+    },
+    {
+      "number": "25",
+      "name": "Hao chen Zhang",
+      "grade": "Jr.",
+      "position": "HB, LB",
+      "height": "5'9\"",
+      "weight": "153 lbs",
+      "team": "Varsity"
+    },
+    {
+      "number": "30",
+      "name": "James Jones",
+      "grade": "Jr.",
+      "position": "RB, ILB",
+      "height": "5'11\"",
+      "weight": "166 lbs",
+      "team": "Varsity"
+    },
+    {
+      "number": "32",
+      "name": "Finn Harrington",
+      "grade": "Jr.",
+      "position": "CB, SS, WR",
+      "height": "5'8\"",
+      "weight": "145 lbs",
+      "team": "Varsity"
+    },
+    {
+      "number": "33",
+      "name": "Patton Staggs",
+      "grade": "Sr.",
+      "position": "S",
+      "height": "6'1\"",
+      "weight": "160 lbs",
+      "team": "Varsity"
+    },
+    {
+      "number": "42",
+      "name": "Weston Sisk",
+      "grade": "Jr.",
+      "position": "ATH, OLB",
+      "height": "5'7\"",
+      "weight": "135 lbs",
+      "team": "Varsity"
+    },
+    {
+      "number": "50",
+      "name": "Ndaye Stevens",
+      "grade": "Sr.",
+      "position": "OL, DL",
+      "height": "5'8\"",
+      "weight": "203 lbs",
+      "team": "Varsity"
+    },
+    {
+      "number": "55",
+      "name": "Jonathan Coss",
+      "grade": "Jr.",
+      "position": "T, DE",
+      "height": "",
+      "weight": "",
+      "team": "Varsity"
+    },
+    {
+      "number": "57",
+      "name": "Kahron Jones",
+      "grade": "Jr.",
+      "position": "OL",
+      "height": "6'0\"",
+      "weight": "205 lbs",
+      "team": "Varsity"
+    },
+    {
+      "number": "61",
+      "name": "Jacob Cohen",
+      "grade": "Sr.",
+      "position": "G",
+      "height": "5'7\"",
+      "weight": "200 lbs",
+      "team": "Varsity"
+    },
+    {
+      "number": "63",
+      "name": "Noah Suleiman",
+      "grade": "Jr.",
+      "position": "C, DL",
+      "height": "",
+      "weight": "",
+      "team": "Varsity"
+    },
+    {
+      "number": "75",
+      "name": "Xavion Clinton",
+      "grade": "Jr.",
+      "position": "OL, NG",
+      "height": "5'11\"",
+      "weight": "315 lbs",
+      "team": "Varsity"
+    },
+    {
+      "number": "78",
+      "name": "Kevin Thet",
+      "grade": "Jr.",
+      "position": "OL",
+      "height": "6'1\"",
+      "weight": "285 lbs",
+      "team": "Varsity"
+    },
+    {
+      "number": "80",
+      "name": "Vincent Sortman",
+      "grade": "Jr.",
+      "position": "WR, DB",
+      "height": "5'10\"",
+      "weight": "145 lbs",
+      "team": "Varsity"
+    }
+  ]
+}

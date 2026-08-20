@@ -1,0 +1,243 @@
+---
+title: "Roster CSV Import — Friends of Hall Football"
+layout: base.njk
+permalink: admin/roster-import.html
+eleventyExcludeFromCollections: true
+---
+
+<section class="section wrap">
+  <div class="section-head"><h2>Roster CSV Import</h2></div>
+  <p class="section-lede">
+    Turn a roster spreadsheet into a season file. Nothing is uploaded anywhere &mdash;
+    the file is read here in your browser.
+  </p>
+
+  <div class="side-card">
+    <h3>1. Pick the season year</h3>
+    <p><input type="text" id="seasonYear" class="import-input" placeholder="2026" value="2026" inputmode="numeric"></p>
+
+    <h3 style="margin-top:26px">2. Choose your CSV file</h3>
+    <p><input type="file" id="csvFile" accept=".csv,text/csv" class="import-input"></p>
+    <p class="import-note">
+      Expected columns: <strong>#, Player, Grade, Position, Height, Weight, Team</strong>.
+      Column order does not matter and capitalisation is ignored.
+      Rows with no player name are skipped, and a dash means &ldquo;not provided&rdquo;.
+      Team accepts Varsity, JV (or Junior Varsity), and Freshman.
+    </p>
+  </div>
+
+  <div id="report" class="import-report" hidden></div>
+
+  <div id="actions" class="hero-actions" style="margin-top:26px" hidden>
+    <button type="button" id="downloadBtn" class="btn btn--primary">Download season file</button>
+  </div>
+
+  <div id="nextSteps" class="side-card" style="margin-top:26px" hidden>
+    <h3>3. Add the file to the site</h3>
+    <p>Save the downloaded file, then in Terminal run these one at a time,
+       replacing <code>YEAR</code> with the season year:</p>
+    <p class="import-note">
+      cd ~/PROJECTS/friends-of-hall-football<br>
+      git pull<br>
+      cp ~/Downloads/YEAR.json src/_data/rosters/YEAR.json<br>
+      git status<br>
+      git add .<br>
+      git commit -m "Import YEAR roster"<br>
+      git push
+    </p>
+    <p>Re-importing the same year overwrites that season cleanly, so there are
+       no duplicates. To remove a season entirely, delete its file from
+       <code>src/_data/rosters/</code>.</p>
+  </div>
+</section>
+
+<script>
+(function () {
+  var PLACEHOLDER = ["", "-", "--", "\u2014", "n/a", "tbd", "none"];
+  var TEAMS = {
+    "varsity": "Varsity", "v": "Varsity",
+    "jv": "Junior Varsity", "junior varsity": "Junior Varsity", "j.v.": "Junior Varsity",
+    "freshman": "Freshman", "freshmen": "Freshman", "fresh": "Freshman", "f": "Freshman", "9": "Freshman"
+  };
+  var payload = null;
+
+  function clean(v) {
+    v = (v == null ? "" : String(v)).trim();
+    return PLACEHOLDER.indexOf(v.toLowerCase()) > -1 ? "" : v;
+  }
+
+  // Minimal RFC-4180 parser: handles quoted fields, embedded commas, doubled quotes, CRLF.
+  function parseCSV(text) {
+    text = text.replace(/^\uFEFF/, "");
+    var rows = [], row = [], field = "", inQuotes = false, i = 0;
+    while (i < text.length) {
+      var c = text[i];
+      if (inQuotes) {
+        if (c === '"') {
+          if (text[i + 1] === '"') { field += '"'; i += 2; continue; }
+          inQuotes = false; i++; continue;
+        }
+        field += c; i++; continue;
+      }
+      if (c === '"' && field === "") { inQuotes = true; i++; continue; }
+      if (c === ",") { row.push(field); field = ""; i++; continue; }
+      if (c === "\r") { i++; continue; }
+      if (c === "\n") { row.push(field); rows.push(row); row = []; field = ""; i++; continue; }
+      field += c; i++;
+    }
+    if (field.length || row.length) { row.push(field); rows.push(row); }
+    return rows.filter(function (r) { return r.some(function (c) { return c.trim() !== ""; }); });
+  }
+
+  function findCol(headers, names) {
+    for (var i = 0; i < headers.length; i++) {
+      var h = headers[i].trim().toLowerCase().replace(/[^a-z#]/g, "");
+      if (names.indexOf(h) > -1) return i;
+    }
+    return -1;
+  }
+
+  function show(html, kind) {
+    var el = document.getElementById("report");
+    el.className = "import-report import-report--" + kind;
+    el.innerHTML = html;
+    el.hidden = false;
+  }
+
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c];
+    });
+  }
+
+  document.getElementById("csvFile").addEventListener("change", function (e) {
+    var file = e.target.files && e.target.files[0];
+    document.getElementById("actions").hidden = true;
+    document.getElementById("nextSteps").hidden = true;
+    payload = null;
+    if (!file) return;
+
+    var reader = new FileReader();
+    reader.onerror = function () { show("<p>Could not read that file. Try re-saving it as CSV.</p>", "bad"); };
+    reader.onload = function () {
+      var rows;
+      try { rows = parseCSV(String(reader.result)); }
+      catch (err) { show("<p>That file could not be parsed as CSV.</p>", "bad"); return; }
+
+      if (rows.length < 2) { show("<p>That file has no data rows.</p>", "bad"); return; }
+
+      var headers = rows[0];
+      var ix = {
+        number: findCol(headers, ["#", "no", "num", "number", "jersey"]),
+        name: findCol(headers, ["player", "name", "playername"]),
+        grade: findCol(headers, ["grade", "year", "class"]),
+        position: findCol(headers, ["position", "pos", "positions"]),
+        height: findCol(headers, ["height", "ht"]),
+        weight: findCol(headers, ["weight", "wt"]),
+        team: findCol(headers, ["team", "level", "squad"])
+      };
+
+      if (ix.name === -1) {
+        show("<p><strong>No player-name column found.</strong> The file needs a column called " +
+             "<code>Player</code> or <code>Name</code>. Columns seen: " +
+             esc(headers.join(", ")) + "</p>", "bad");
+        return;
+      }
+
+      var players = [], skipped = 0, warnings = [], unknownTeams = {};
+      for (var r = 1; r < rows.length; r++) {
+        var row = rows[r];
+        var get = function (k) { return ix[k] > -1 ? clean(row[ix[k]]) : ""; };
+        var name = get("name");
+        if (!name) { skipped++; continue; }
+
+        var rawTeam = get("team");
+        var team = TEAMS[rawTeam.toLowerCase()] || rawTeam;
+        if (!rawTeam) {
+          team = "Varsity";
+          warnings.push("Row " + (r + 1) + " (" + name + ") had no team, placed on Varsity.");
+        } else if (["Varsity", "Junior Varsity", "Freshman"].indexOf(team) === -1) {
+          unknownTeams[team] = (unknownTeams[team] || 0) + 1;
+        }
+
+        players.push({
+          number: get("number"), name: name, grade: get("grade"),
+          position: get("position"), height: get("height"),
+          weight: get("weight"), team: team
+        });
+      }
+
+      if (!players.length) { show("<p>No rows had a player name in them.</p>", "bad"); return; }
+
+      players.sort(function (a, b) {
+        var an = /^\d+$/.test(a.number) ? parseInt(a.number, 10) : 9999;
+        var bn = /^\d+$/.test(b.number) ? parseInt(b.number, 10) : 9999;
+        if (an !== bn) return an - bn;
+        return a.name.localeCompare(b.name);
+      });
+
+      // duplicate jersey numbers within the same team
+      var seen = {};
+      players.forEach(function (p) {
+        if (!p.number) return;
+        var k = p.team + "#" + p.number;
+        if (seen[k]) warnings.push("Duplicate number " + p.number + " on " + p.team + ": " + seen[k] + " and " + p.name + ".");
+        else seen[k] = p.name;
+      });
+
+      Object.keys(unknownTeams).forEach(function (t) {
+        warnings.push("Unrecognised team \u201c" + t + "\u201d on " + unknownTeams[t] +
+                      " player(s). It will get its own heading only if it is Varsity, Junior Varsity, or Freshman \u2014 otherwise those players will not appear.");
+      });
+
+      var counts = {};
+      players.forEach(function (p) { counts[p.team] = (counts[p.team] || 0) + 1; });
+
+      var html = "<h3>Found " + players.length + " players</h3><ul>";
+      ["Varsity", "Junior Varsity", "Freshman"].forEach(function (t) {
+        if (counts[t]) html += "<li>" + t + ": " + counts[t] + "</li>";
+      });
+      Object.keys(counts).forEach(function (t) {
+        if (["Varsity", "Junior Varsity", "Freshman"].indexOf(t) === -1) {
+          html += "<li>" + esc(t) + ": " + counts[t] + " (will not display)</li>";
+        }
+      });
+      html += "</ul>";
+      if (skipped) html += "<p>" + skipped + " row(s) skipped for having no player name.</p>";
+      if (warnings.length) {
+        html += "<h3>Check these</h3><ul>";
+        warnings.forEach(function (w) { html += "<li>" + esc(w) + "</li>"; });
+        html += "</ul>";
+      }
+
+      html += "<h3>First few rows</h3><div class='table-wrap'><table class='roster-table'>" +
+              "<thead><tr><th>#</th><th>Player</th><th>Grade</th><th>Position</th><th>Height</th><th>Weight</th><th>Team</th></tr></thead><tbody>";
+      players.slice(0, 5).forEach(function (p) {
+        html += "<tr><td>" + esc(p.number || "\u2014") + "</td><td>" + esc(p.name) + "</td><td>" +
+                esc(p.grade || "\u2014") + "</td><td>" + esc(p.position || "\u2014") + "</td><td>" +
+                esc(p.height || "\u2014") + "</td><td>" + esc(p.weight || "\u2014") + "</td><td>" + esc(p.team) + "</td></tr>";
+      });
+      html += "</tbody></table></div>";
+
+      show(html, warnings.length ? "warn" : "ok");
+
+      var year = clean(document.getElementById("seasonYear").value) || "season";
+      payload = { season: year, players: players };
+      document.getElementById("actions").hidden = false;
+      document.getElementById("nextSteps").hidden = false;
+    };
+    reader.readAsText(file);
+  });
+
+  document.getElementById("downloadBtn").addEventListener("click", function () {
+    if (!payload) return;
+    payload.season = clean(document.getElementById("seasonYear").value) || payload.season;
+    var blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = payload.season + ".json";
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    URL.revokeObjectURL(a.href);
+  });
+})();
+</script>

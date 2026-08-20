@@ -1,0 +1,77 @@
+---
+title: "Rosters — Friends of Hall Football"
+active: rosters
+layout: base.njk
+permalink: rosters.html
+---
+
+<section class="section wrap">
+  <div class="section-head"><h2>{{ pages.rostersPage.heading or "Rosters" }}</h2></div>
+  {% if pages.rostersPage.intro %}<p class="section-lede">{{ pages.rostersPage.intro }}</p>{% endif %}
+
+  {% set keys = rosters | seasonKeys %}
+
+  {% if not keys.length %}
+    <p class="section-lede">No rosters have been added yet.</p>
+  {% else %}
+
+    {% if keys.length > 1 %}
+    <nav class="season-nav" aria-label="Jump to season">
+      {% for key in keys %}
+        <a class="season-tab" href="#season-{{ key }}">{{ key }}</a>
+      {% endfor %}
+    </nav>
+    {% endif %}
+
+    {% for key in keys %}
+      {% set current = rosters[key] %}
+      <div class="season-block" id="season-{{ key }}">
+        <h3 class="season-heading">{{ key }} Season</h3>
+
+        {% for teamName in ["Varsity", "Junior Varsity", "Freshman"] %}
+          {% set squad = [] %}
+          {% for p in current.players %}
+            {% if p.team == teamName %}{% set squad = (squad.push(p), squad) %}{% endif %}
+          {% endfor %}
+          {% if squad.length %}
+          <div class="roster-block">
+            <h4 class="roster-team">{{ teamName }} <span class="roster-count">{{ squad.length }} players</span></h4>
+            <div class="table-wrap">
+              <table class="roster-table">
+                <caption class="visually-hidden">{{ key }} {{ teamName }} roster</caption>
+                <thead>
+                  <tr>
+                    <th scope="col" class="col-num">#</th>
+                    <th scope="col">Player</th>
+                    <th scope="col">Grade</th>
+                    <th scope="col">Position</th>
+                    <th scope="col">Height</th>
+                    <th scope="col">Weight</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for p in squad %}
+                  <tr>
+                    <td class="col-num">{{ p.number or "—" }}</td>
+                    <td class="col-name">{{ p.name }}</td>
+                    <td>{{ p.grade or "—" }}</td>
+                    <td>{{ p.position or "—" }}</td>
+                    <td>{{ p.height or "—" }}</td>
+                    <td>{{ p.weight or "—" }}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          {% endif %}
+        {% endfor %}
+
+        {% if not current.players.length %}
+          <p>No players have been added for this season yet.</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+
+  {% endif %}
+</section>

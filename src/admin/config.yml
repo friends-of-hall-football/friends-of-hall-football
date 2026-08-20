@@ -91,17 +91,25 @@ collections:
             fields:
               - { name: heading, label: "Heading", widget: string }
               - { name: intro, label: "Intro paragraph", widget: text }
-              - name: signupHtml
-                label: "Sign-up links (HTML)"
-                widget: code
-                default_language: html
-                allow_language_selection: false
-                output_code_only: true
+              - name: signupLinks
+                label: "Sign-up links"
+                label_singular: "Sign-up link"
+                widget: list
+                required: false
+                summary: "{{fields.label}}"
                 hint: >-
-                  Paste your SignUpGenius links here. Copy one <li> line, change
-                  the URL inside the quotes and the words between the > and <,
-                  and add or delete lines as sign-ups change.
+                  One entry per SignUpGenius sign-up. Use "Add Sign-up link" to
+                  add another, drag to reorder, and the trash icon to remove one.
+                fields:
+                  - { name: label, label: "Link text", widget: string, hint: "What people see, e.g. Sandwich Sign-up" }
+                  - { name: url, label: "SignUpGenius URL", widget: string, pattern: ["^https?://", "Must start with https://"] }
               - { name: closing, label: "Closing paragraph", widget: text }
+          - name: rostersPage
+            label: "Rosters Page"
+            widget: object
+            fields:
+              - { name: heading, label: "Heading", widget: string }
+              - { name: intro, label: "Intro paragraph", widget: text, required: false }
           - name: donatePage
             label: "Donate Page"
             widget: object
@@ -203,5 +211,41 @@ collections:
           - { name: storeUrl, label: "Team store link", widget: string }
           - { name: facebookUrl, label: "Facebook link", widget: string }
           - { name: instagramUrl, label: "Instagram link", widget: string, required: false }
+          - { name: twitterUrl, label: "X (Twitter) link", widget: string, required: false }
+          - { name: tiktokUrl, label: "TikTok link", widget: string, required: false }
           - { name: ciacUrl, label: "CIAC schedule link", widget: string }
           - { name: newsletterUrl, label: "Current newsletter link", widget: string }
+
+  - name: rosters
+    label: "Rosters"
+    label_singular: "Season roster"
+    folder: "src/_data/rosters"
+    extension: json
+    format: json
+    create: true
+    delete: true
+    identifier_field: season
+    slug: "{{fields.season}}"
+    summary: "{{fields.season}} season"
+    description: >-
+      One file per season. To load a whole roster at once use the CSV importer
+      at /admin/roster-import.html, then add the downloaded file to the repo.
+      Editing here is best for small fixes, like moving one player up a team.
+    fields:
+      - { name: season, label: "Season year", widget: string, pattern: ['^\d{4}$', "Use a four-digit year, e.g. 2026"], hint: "Must match the file name" }
+      - name: players
+        label: "Players"
+        label_singular: "Player"
+        widget: list
+        summary: "{{fields.number}} {{fields.name}} - {{fields.team}}"
+        fields:
+          - { name: number, label: "Jersey number", widget: string, required: false }
+          - { name: name, label: "Player name", widget: string }
+          - { name: grade, label: "Grade", widget: string, required: false, hint: "e.g. Sr., Jr., So., Fr." }
+          - { name: position, label: "Position", widget: string, required: false }
+          - { name: height, label: "Height", widget: string, required: false }
+          - { name: weight, label: "Weight", widget: string, required: false }
+          - name: team
+            label: "Team"
+            widget: select
+            options: ["Varsity", "Junior Varsity", "Freshman"]

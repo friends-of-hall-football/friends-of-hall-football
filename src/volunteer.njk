@@ -10,7 +10,13 @@ permalink: volunteer.html
     <p class="section-lede">{{ pages.volunteerPage.intro }}</p>
 
     <div class="signup-list">
-      {{ pages.volunteerPage.signupHtml | safe }}
+      {% if pages.volunteerPage.signupLinks and pages.volunteerPage.signupLinks.length %}
+      <ul>
+        {% for link in pages.volunteerPage.signupLinks %}
+        {% if link.url %}<li><a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label or link.url }}</a></li>{% endif %}
+        {% endfor %}
+      </ul>
+      {% endif %}
     </div>
 
     <div class="side-card" style="margin-top:36px">
