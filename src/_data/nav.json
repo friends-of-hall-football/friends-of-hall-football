@@ -1,0 +1,60 @@
+{
+  "items": [
+    {
+      "label": "Schedule",
+      "url": "index.html#schedule",
+      "key": "",
+      "external": false,
+      "visible": true,
+      "siteKey": ""
+    },
+    {
+      "label": "News",
+      "url": "index.html#news",
+      "key": "",
+      "external": false,
+      "visible": true,
+      "siteKey": ""
+    },
+    {
+      "label": "Rosters",
+      "url": "rosters.html",
+      "key": "rosters",
+      "external": false,
+      "visible": false,
+      "siteKey": ""
+    },
+    {
+      "label": "Newsletter",
+      "url": "newsletter.html",
+      "key": "newsletter",
+      "external": false,
+      "visible": true,
+      "siteKey": ""
+    },
+    {
+      "label": "Sponsors",
+      "url": "sponsors.html",
+      "key": "sponsors",
+      "external": false,
+      "visible": true,
+      "siteKey": ""
+    },
+    {
+      "label": "Volunteer",
+      "url": "volunteer.html",
+      "key": "volunteer",
+      "external": false,
+      "visible": true,
+      "siteKey": ""
+    },
+    {
+      "label": "Team Store",
+      "url": "",
+      "key": "",
+      "external": true,
+      "visible": true,
+      "siteKey": "storeUrl"
+    }
+  ]
+}

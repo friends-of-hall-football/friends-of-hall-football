@@ -29,13 +29,9 @@
       </a>
 
       <nav class="nav">
-        <a class="nav-link" href="index.html#schedule">Schedule</a>
-        <a class="nav-link" href="index.html#news">News</a>
-        <a class="nav-link{% if active == "rosters" %} is-active{% endif %}" href="rosters.html">Rosters</a>
-        <a class="nav-link{% if active == "newsletter" %} is-active{% endif %}" href="newsletter.html">Newsletter</a>
-        <a class="nav-link{% if active == "sponsors" %} is-active{% endif %}" href="sponsors.html">Sponsors</a>
-        <a class="nav-link{% if active == "volunteer" %} is-active{% endif %}" href="volunteer.html">Volunteer</a>
-        <a class="nav-link" href="{{ site.storeUrl }}" target="_blank" rel="noopener">Team Store <svg class="external-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"></path><path d="M20 4 11 13"></path><path d="M19 15v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4"></path></svg></a>
+        {% for item in nav.items %}{% if item.visible %}{% set href = item.siteKey and site[item.siteKey] or item.url %}{% if href %}
+        <a class="nav-link{% if item.key and active == item.key %} is-active{% endif %}" href="{{ href }}"{% if item.external %} target="_blank" rel="noopener"{% endif %}>{{ item.label }}{% if item.external %} <svg class="external-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"></path><path d="M20 4 11 13"></path><path d="M19 15v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4"></path></svg>{% endif %}</a>
+        {% endif %}{% endif %}{% endfor %}
         <a class="nav-donate" href="donate.html">Donate</a>
       </nav>
 
@@ -46,13 +42,9 @@
     </div>
 
     <div class="nav-panel">
-      <a href="index.html#schedule">Schedule</a>
-      <a href="index.html#news">News</a>
-      <a href="rosters.html">Rosters</a>
-      <a href="newsletter.html">Newsletter</a>
-      <a href="sponsors.html">Sponsors</a>
-      <a href="volunteer.html">Volunteer</a>
-      <a href="{{ site.storeUrl }}" target="_blank" rel="noopener">Team Store <svg class="external-icon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"></path><path d="M20 4 11 13"></path><path d="M19 15v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4"></path></svg></a>
+      {% for item in nav.items %}{% if item.visible %}{% set href = item.siteKey and site[item.siteKey] or item.url %}{% if href %}
+      <a href="{{ href }}"{% if item.external %} target="_blank" rel="noopener"{% endif %}>{{ item.label }}{% if item.external %} <svg class="external-icon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"></path><path d="M20 4 11 13"></path><path d="M19 15v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4"></path></svg>{% endif %}</a>
+      {% endif %}{% endif %}{% endfor %}
     </div>
   </header>
   <!-- SHARED NAV END -->

@@ -200,6 +200,27 @@ collections:
               - { name: link, label: "Stripe Payment Link URL", widget: string }
           - { name: customLink, label: "Custom-amount Payment Link URL", widget: string }
 
+      - name: nav
+        label: "Navigation Menu"
+        file: "src/_data/nav.json"
+        fields:
+          - name: items
+            label: "Menu items"
+            label_singular: "Menu item"
+            widget: list
+            summary: "{{fields.label}}"
+            hint: >-
+              Controls the top menu on every page, on desktop and mobile.
+              Drag to reorder. Untick "Show in menu" to hide an item without
+              deleting it. The Donate button is always shown and is not listed here.
+            fields:
+              - { name: label, label: "Menu text", widget: string }
+              - { name: visible, label: "Show in menu", widget: boolean, default: true }
+              - { name: url, label: "Link", widget: string, required: false, hint: "A page on this site like sponsors.html, or a full https:// address for an outside link" }
+              - { name: external, label: "Opens in a new tab (outside link)", widget: boolean, default: false }
+              - { name: key, label: "Highlight key", widget: string, required: false, hint: "Advanced - leave blank. Matches a page so its menu item is highlighted." }
+              - { name: siteKey, label: "Use a link from Site Settings", widget: string, required: false, hint: "Advanced - leave blank. Only used by Team Store, which reads storeUrl." }
+
       - name: site
         label: "Site Settings"
         file: "src/_data/site.json"
