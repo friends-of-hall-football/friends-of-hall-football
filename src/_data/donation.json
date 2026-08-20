@@ -2,16 +2,16 @@
   "amounts": [
     {
       "value": "25",
-      "link": "https://buy.stripe.com/REPLACE_25"
+      "link": "https://donate.stripe.com/3cIaEQfZ11iK0S5aCd4Ni00"
     },
     {
       "value": "50",
-      "link": "https://buy.stripe.com/REPLACE_50"
+      "link": "https://donate.stripe.com/fZubIUdQT7H858l6lX4Ni01"
     },
     {
       "value": "100",
-      "link": "https://buy.stripe.com/REPLACE_100"
+      "link": "https://donate.stripe.com/bJe28k4gj6D444haCd4Ni02"
     }
   ],
-  "customLink": "https://buy.stripe.com/REPLACE_CUSTOM"
+  "customLink": "https://donate.stripe.com/14AcMY28b7H8gR39y94Ni03"
 }
