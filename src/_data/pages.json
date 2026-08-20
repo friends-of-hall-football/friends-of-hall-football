@@ -38,8 +38,30 @@
   "volunteerPage": {
     "heading": "Lend a Hand",
     "intro": "Every home game and team event runs on parent and community volunteers. Pick a slot that works for you — all sign-ups go through SignUpGenius.",
-    "signupHtml": "<ul>\n  <li><a href=\"https://www.signupgenius.com/go/10C0844AEA822A1FAC25-65203612-hall\">Team Dinners</a></li>\n  <li><a href=\"https://www.signupgenius.com/go/10C0844AEA822A1FAC25-65194674-pbj\">Sandwich Sign-up</a></li>\n<li><a href=\"https://www.signupgenius.com/go/10C054AAFA628ABFEC25-65278110-freshman\">Freshman Chain Gang</a></li>\n<li><a href=\"https://www.signupgenius.com/go/10C054AAFA628ABFEC25-65278184-jvgame\">JV Chain Gang</a></li>\n</ul>",
-    "closing": "Do not see something that fits, or want to help in another way? Email us and we will find a spot for you."
+    "signupLinks": [
+      {
+        "label": "Team Dinners Sign-up",
+        "url": "https://www.signupgenius.com/go/10C0844AEA822A1FAC25-65203612-hall"
+      },
+      {
+        "label": "Sandwich Sign-up",
+        "url": "https://www.signupgenius.com/go/10C0844AEA822A1FAC25-65194674-pbj"
+      },
+      {
+        "label": "Freshman Chains Sign-up",
+        "url": "https://www.signupgenius.com/go/10C054AAFA628ABFEC25-65278110-freshman"
+      },
+      {
+        "label": "JV Chains Sign-up",
+        "url": "https://www.signupgenius.com/go/10C054AAFA628ABFEC25-65278184-jvgame"
+      }
+    ],
+    "closing": "Do not see something that fits, or want to help in another way? Email us and we will find a spot for you.",
+    "signupHtml": "<ul>\n  <li><a href=\"https://www.signupgenius.com/go/10C0844AEA822A1FAC25-65203612-hall\">Team Dinners</a></li>\n  <li><a href=\"https://www.signupgenius.com/go/10C0844AEA822A1FAC25-65194674-pbj\">Sandwich Sign-up</a></li>\n<li><a href=\"https://www.signupgenius.com/go/10C054AAFA628ABFEC25-65278110-freshman\">Freshman Chain Gang</a></li>\n<li><a href=\"https://www.signupgenius.com/go/10C054AAFA628ABFEC25-65278184-jvgame\">JV Chain Gang</a></li>\n</ul>"
+  },
+  "rostersPage": {
+    "heading": "Rosters",
+    "intro": "To Be Added"
   },
   "donatePage": {
     "cardHeading": "Make a Donation",
