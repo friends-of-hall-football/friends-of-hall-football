@@ -649,3 +649,9 @@ a:hover { color: var(--navy); }
   .social-card { padding: 20px 18px; }
   .social-card-name { font-size: 24px; }
 }
+
+/* Honeypot field for Netlify Forms spam filtering — hidden from people, visible to bots */
+.hidden-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; visibility: hidden; }
+
+/* Long email addresses must be able to wrap on narrow phones */
+.section-lede a[href^="mailto:"] { word-break: break-word; overflow-wrap: anywhere; }

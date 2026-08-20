@@ -50,15 +50,17 @@ permalink: sponsors.html
       </div>
       <div class="card card--outline">
         <h3>Sponsor Inquiry</h3>
-        <form class="card-form" method="post" name="sponsor-inquiry" method="POST" data-netlify="true" action="/thank-you.html">
+        <form class="card-form" method="POST" name="sponsor-inquiry" data-netlify="true" netlify-honeypot="bot-field" action="/sponsor-thanks.html">
+          <input type="hidden" name="form-name" value="sponsor-inquiry">
+          <p class="hidden-field"><label>Leave this field empty <input name="bot-field"></label></p>
           <label class="field">Business or family name
-            <input type="text" name="business" placeholder="Main Street Hardware">
+            <input type="text" name="business" placeholder="Main Street Hardware" required>
           </label>
           <label class="field">Email
-            <input type="email" name="email" placeholder="you@email.com">
+            <input type="email" name="email" placeholder="you@email.com" required>
           </label>
           <label class="field">What are you interested in?
-            <textarea name="message" rows="4" placeholder="We would like to sponsor at the Blue level."></textarea>
+            <textarea name="message" rows="4" placeholder="We would like to sponsor at the Blue level." required></textarea>
           </label>
           <button class="btn btn--primary btn--block" type="submit">Send Inquiry</button>
         </form>
