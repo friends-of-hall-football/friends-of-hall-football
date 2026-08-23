@@ -2,59 +2,67 @@
   "items": [
     {
       "label": "Schedule",
-      "url": "index.html#schedule",
-      "key": "",
-      "external": false,
       "visible": true,
+      "url": "index.html#schedule",
+      "external": false,
+      "key": "",
       "siteKey": ""
     },
     {
       "label": "News",
-      "url": "index.html#news",
-      "key": "",
-      "external": false,
       "visible": true,
+      "url": "index.html#news",
+      "external": false,
+      "key": "",
       "siteKey": ""
     },
     {
       "label": "Rosters",
-      "url": "rosters.html",
-      "key": "rosters",
-      "external": false,
       "visible": false,
+      "url": "rosters.html",
+      "external": false,
+      "key": "rosters",
       "siteKey": ""
     },
     {
       "label": "Newsletter",
-      "url": "newsletter.html",
-      "key": "newsletter",
-      "external": false,
       "visible": true,
+      "url": "newsletter.html",
+      "external": false,
+      "key": "newsletter",
       "siteKey": ""
     },
     {
       "label": "Sponsors",
-      "url": "sponsors.html",
-      "key": "sponsors",
-      "external": false,
       "visible": true,
+      "url": "sponsors.html",
+      "external": false,
+      "key": "sponsors",
       "siteKey": ""
     },
     {
       "label": "Volunteer",
-      "url": "volunteer.html",
-      "key": "volunteer",
-      "external": false,
       "visible": true,
+      "url": "volunteer.html",
+      "external": false,
+      "key": "volunteer",
       "siteKey": ""
     },
     {
       "label": "Team Store",
-      "url": "",
-      "key": "",
-      "external": true,
       "visible": true,
+      "url": "",
+      "external": false,
+      "key": "",
       "siteKey": "storeUrl"
+    },
+    {
+      "label": "Team Store (BSN)",
+      "visible": true,
+      "url": "https://bsnteamsports.com/shop/XdMLJqEZm1",
+      "external": true,
+      "key": "",
+      "siteKey": ""
     }
   ]
 }
