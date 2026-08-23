@@ -50,9 +50,9 @@
     },
     {
       "label": "Team Store",
-      "visible": true,
+      "visible": false,
       "url": "",
-      "external": false,
+      "external": true,
       "key": "",
       "siteKey": "storeUrl"
     },
