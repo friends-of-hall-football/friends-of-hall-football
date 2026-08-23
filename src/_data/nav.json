@@ -9,27 +9,11 @@
       "siteKey": ""
     },
     {
-      "label": "News",
-      "visible": true,
-      "url": "index.html#news",
-      "external": false,
-      "key": "",
-      "siteKey": ""
-    },
-    {
       "label": "Rosters",
-      "visible": false,
+      "visible": true,
       "url": "rosters.html",
       "external": false,
       "key": "rosters",
-      "siteKey": ""
-    },
-    {
-      "label": "Newsletter",
-      "visible": true,
-      "url": "newsletter.html",
-      "external": false,
-      "key": "newsletter",
       "siteKey": ""
     },
     {
@@ -46,6 +30,22 @@
       "url": "volunteer.html",
       "external": false,
       "key": "volunteer",
+      "siteKey": ""
+    },
+    {
+      "label": "Newsletter",
+      "visible": true,
+      "url": "newsletter.html",
+      "external": false,
+      "key": "newsletter",
+      "siteKey": ""
+    },
+    {
+      "label": "News",
+      "visible": true,
+      "url": "index.html#news",
+      "external": false,
+      "key": "",
       "siteKey": ""
     },
     {
