@@ -49,15 +49,15 @@
       "siteKey": ""
     },
     {
-      "label": "Team Store",
-      "visible": false,
+      "label": "Store (5K)",
+      "visible": true,
       "url": "",
       "external": true,
       "key": "",
       "siteKey": "storeUrl"
     },
     {
-      "label": "Team Store (BSN)",
+      "label": "Store (BSN)",
       "visible": true,
       "url": "https://bsnteamsports.com/shop/XdMLJqEZm1",
       "external": true,
