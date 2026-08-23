@@ -4,7 +4,32 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ title }}</title>
-<meta name="description" content="{{ description or site.description }}">
+
+{# Per-page description comes from CMS -> Page Text -> Search & Sharing.
+   Falls back to the site tagline if a page has no entry. #}
+{% set metaDesc = description or (seoKey and pages.seo[seoKey]) or site.description %}
+{% set baseUrl = site.url %}
+{% set pageUrl = page.url | absoluteUrl(site.url) %}
+{% set shareImg = shareImage or image or site.shareImage or pages.hero.image %}
+
+<meta name="description" content="{{ metaDesc }}">
+<link rel="canonical" href="{{ pageUrl }}">
+{% if noindex %}<meta name="robots" content="noindex, follow">{% endif %}
+
+<meta property="og:type" content="{% if layout == "post.njk" %}article{% else %}website{% endif %}">
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ metaDesc }}">
+<meta property="og:url" content="{{ pageUrl }}">
+{% if shareImg %}<meta property="og:image" content="{{ baseUrl }}{{ shareImg }}">
+<meta property="og:image:alt" content="{{ site.name }}">{% endif %}
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ title }}">
+<meta name="twitter:description" content="{{ metaDesc }}">
+{% if shareImg %}<meta name="twitter:image" content="{{ baseUrl }}{{ shareImg }}">{% endif %}
+
 <link rel="icon" href="/assets/titans-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

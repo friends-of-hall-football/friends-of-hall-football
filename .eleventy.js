@@ -13,6 +13,23 @@ module.exports = function (eleventyConfig) {
     return "/" + String(p).trim().replace(/^\/+/, "");
   });
 
+  // Date in the YYYY-MM-DD form sitemap.xml expects.
+  eleventyConfig.addFilter("isoDate", (value) => {
+    const d = value instanceof Date ? value : new Date(value);
+    return isNaN(d) ? "" : d.toISOString().slice(0, 10);
+  });
+
+  // Turn a page URL into a full absolute address, e.g. "/donate.html" ->
+  // "https://friendsofhallfootball.org/donate.html". Used for canonical links
+  // and social sharing tags, which both require absolute URLs.
+  eleventyConfig.addFilter("absoluteUrl", (pageUrl, base) => {
+    const b = String(base || "").replace(/\/+$/, "");
+    let u = String(pageUrl || "/");
+    if (u.endsWith("/index.html")) u = u.slice(0, -"index.html".length);
+    if (!u.startsWith("/")) u = "/" + u;
+    return b + u;
+  });
+
   // Season keys (e.g. "2026", "2025") sorted newest first, for the roster tabs.
   eleventyConfig.addFilter("seasonKeys", (obj) => {
     if (!obj || typeof obj !== "object") return [];

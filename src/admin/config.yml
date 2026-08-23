@@ -24,6 +24,7 @@ collections:
     fields:
       - { name: title, label: "Headline", widget: string }
       - { name: date, label: "Date", widget: datetime, date_format: "YYYY-MM-DD", time_format: false }
+      - { name: description, label: "Search & sharing text", widget: text, required: false, hint: "One or two sentences shown under this post's link in Google and on Facebook. Leave blank to use the site tagline." }
       - { name: image, label: "Photo", widget: image, required: false, media_folder: "/src/images/posts", public_folder: "/images/posts" }
       - { name: body, label: "Post", widget: markdown }
 
@@ -110,6 +111,22 @@ collections:
             fields:
               - { name: heading, label: "Heading", widget: string }
               - { name: intro, label: "Intro paragraph", widget: text, required: false }
+          - name: seo
+            label: "Search & Sharing Text"
+            widget: object
+            collapsed: true
+            hint: >-
+              The sentence that appears under each page's link in Google results
+              and when a page is shared on Facebook. Aim for 120-160 characters.
+            fields:
+              - { name: home, label: "Homepage", widget: text }
+              - { name: sponsors, label: "Sponsors page", widget: text }
+              - { name: donate, label: "Donate page", widget: text }
+              - { name: newsletter, label: "Newsletter page", widget: text }
+              - { name: volunteer, label: "Volunteer page", widget: text }
+              - { name: rosters, label: "Rosters page", widget: text }
+              - { name: thankYou, label: "Thank You page", widget: text }
+              - { name: sponsorThanks, label: "Sponsor inquiry thank-you page", widget: text }
           - name: donatePage
             label: "Donate Page"
             widget: object
@@ -228,6 +245,7 @@ collections:
           - { name: name, label: "Organization name", widget: string }
           - { name: description, label: "Tagline / meta description", widget: text }
           - { name: url, label: "Site URL", widget: string }
+          - { name: shareImage, label: "Sharing photo", widget: image, required: false, media_folder: "/src/images", public_folder: "/images", hint: "Shown when a link to the site is posted on Facebook. Landscape, about 1200x630." }
           - { name: contactEmail, label: "Contact email", widget: string }
           - { name: storeUrl, label: "Team store link", widget: string }
           - { name: facebookUrl, label: "Facebook link", widget: string }

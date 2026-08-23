@@ -1,0 +1,21 @@
+---
+permalink: sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{#- Skipped: pages marked noindex, the CMS at /admin/, and any page whose
+    menu item is hidden in the CMS (so an unpublished page is not advertised). -#}
+{%- set hiddenUrls = [] %}
+{%- for n in nav.items %}{%- if not n.visible and n.url %}{%- set hiddenUrls = (hiddenUrls.push("/" + n.url), hiddenUrls) %}{%- endif %}{%- endfor %}
+{%- for item in collections.all %}
+{%- if not item.data.noindex and not item.url.startsWith("/admin") and item.url not in hiddenUrls %}
+  <url>
+    <loc>{{ item.url | absoluteUrl(site.url) }}</loc>
+    {%- if item.date %}
+    <lastmod>{{ item.date | isoDate }}</lastmod>
+    {%- endif %}
+  </url>
+{%- endif %}
+{%- endfor %}
+</urlset>
