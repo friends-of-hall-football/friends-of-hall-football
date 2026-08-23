@@ -31,34 +31,28 @@
   },
   "volunteer": {
     "heading": "Lend a Hand",
-    "body": "No experience needed and no long commitment. Grill burgers, work the gate, run the concession stand, or help load equipment. Sign up for whatever fits your schedule.",
+    "body": "No experience needed and no long commitment. Sign up for whatever fits your schedule.",
     "button": "See Volunteer Opportunities",
     "image": "/images/_Newsletter.jpg"
   },
   "volunteerPage": {
     "heading": "Lend a Hand",
     "intro": "Every home game and team event runs on parent and community volunteers. Pick a slot that works for you — all sign-ups go through SignUpGenius.",
-    "closing": "Do not see something that fits, or want to help in another way? Email us and we will find a spot for you.",
     "signupLinks": [
       {
-        "label": "Sandwich Sign-up",
+        "label": "PB&J Sandwich Sign-up",
         "url": "https://www.signupgenius.com/go/10C0844AEA822A1FAC25-65203612-hall"
       },
       {
         "label": "Team Dinners",
         "url": "https://www.signupgenius.com/go/10C0844AEA822A1FAC25-65194674-pbj"
       }
-    ]
+    ],
+    "closing": "Do not see something that fits, or want to help in another way? Email us and we will find a spot for you."
   },
   "rostersPage": {
     "heading": "Rosters",
     "intro": "Varsity, Junior Varsity, and Freshman rosters for the Hall Titans."
-  },
-  "donatePage": {
-    "cardHeading": "Make a Donation",
-    "amountLabel": "Choose an amount",
-    "customButton": "Enter a different amount",
-    "payNote": "You will be taken to our secure Stripe checkout page, where you can pay by card, Apple Pay, or Google Pay. Friends of Hall Football never sees or stores your card number."
   },
   "seo": {
     "home": "Friends of Hall Football is the 501(c)(3) booster club supporting William H. Hall High School football in West Hartford, CT. Schedule, news, and ways to support the Titans.",
@@ -69,5 +63,11 @@
     "rosters": "Varsity, Junior Varsity, and Freshman rosters for William H. Hall High School football in West Hartford, CT.",
     "thankYou": "Thank you for supporting Hall Titans football.",
     "sponsorThanks": "Thank you for your sponsorship inquiry."
+  },
+  "donatePage": {
+    "cardHeading": "Make a Donation",
+    "amountLabel": "Choose an amount",
+    "customButton": "Enter a different amount",
+    "payNote": "You will be taken to our secure Stripe checkout page, where you can pay by card, Apple Pay, or Google Pay. Friends of Hall Football never sees or stores your card number."
   }
 }
