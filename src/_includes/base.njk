@@ -91,5 +91,31 @@
     </div>
   </footer>
   <!-- SHARED FOOTER END -->
+
+<script>
+// The mobile menu is a CSS checkbox toggle, so it stays open when a link only
+// jumps to an anchor on the same page (#schedule, #news) instead of loading a
+// new page. Close it explicitly whenever a menu link is tapped.
+(function () {
+  var toggle = document.getElementById("nav-toggle");
+  var panel = document.querySelector(".nav-panel");
+  if (!toggle || !panel) return;
+  panel.addEventListener("click", function (e) {
+    if (e.target.closest("a")) toggle.checked = false;
+  });
+  // Also close on Escape, and when tapping outside the menu.
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") toggle.checked = false;
+  });
+  document.addEventListener("click", function (e) {
+    if (!toggle.checked) return;
+    // A label click also fires a second click on the checkbox itself; ignore
+    // that one or the menu would close the instant it opened.
+    if (e.target === toggle) return;
+    if (e.target.closest(".nav-panel") || e.target.closest(".nav-burger")) return;
+    toggle.checked = false;
+  });
+})();
+</script>
 </body>
 </html>

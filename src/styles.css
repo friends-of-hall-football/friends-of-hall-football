@@ -198,19 +198,25 @@ a:hover { color: var(--navy); }
   display: flex;
   align-items: center;
   gap: 8px;
-  min-height: 60px;
-  padding: 20px;
+  /* Tightened from 60/20 so a longer CMS-managed menu needs less scrolling,
+     while staying above the ~44px minimum comfortable tap target. */
+  min-height: 48px;
+  padding: 10px 20px;
   text-decoration: none;
   color: var(--navy);
   font-family: var(--display);
   font-weight: 700;
   text-transform: uppercase;
-  font-size: 26px;
+  font-size: 21px;
+  line-height: 1.2;
   letter-spacing: .04em;
   border-bottom: 1px solid var(--line-soft);
 }
 .nav-panel a:last-child { border-bottom: none; }
 .nav-toggle:checked ~ .nav-panel { display: flex; }
+/* If enough menu items are added, scroll inside the panel rather than pushing
+   the page down. Header + top bar are roughly 120px. */
+.nav-panel { max-height: calc(100vh - 120px); overflow-y: auto; -webkit-overflow-scrolling: touch; }
 
 /* ---------- hero ---------- */
 
