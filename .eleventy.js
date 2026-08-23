@@ -13,6 +13,18 @@ module.exports = function (eleventyConfig) {
     return "/" + String(p).trim().replace(/^\/+/, "");
   });
 
+  // Make a CMS-entered link work from any folder. Editors may type
+  // "sponsors.html" or "/sponsors.html"; both must work from /news/a-post/,
+  // where a bare "sponsors.html" would resolve to /news/a-post/sponsors.html.
+  // Full addresses and mailto:/tel: links are left alone.
+  eleventyConfig.addFilter("siteLink", (url) => {
+    const u = String(url || "").trim();
+    if (!u) return u;
+    if (/^([a-z][a-z0-9+.-]*:|\/\/)/i.test(u)) return u;
+    if (u.startsWith("/") || u.startsWith("#")) return u;
+    return "/" + u;
+  });
+
   // Date in the YYYY-MM-DD form sitemap.xml expects.
   eleventyConfig.addFilter("isoDate", (value) => {
     const d = value instanceof Date ? value : new Date(value);
