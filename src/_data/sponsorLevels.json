@@ -1,12 +1,15 @@
 {
   "levels": [
     {
-      "name": "Blue",
+      "name": "Touchdown Sponsor",
       "slug": "blue",
       "amount": "1,000",
       "benefits": [
-        "Logo on this page and in the newsletter",
-        "Your family or business name listed on this page and the program book for the season, logo on team newsletter, weekly social media recognition, logo on team t-shirts"
+        "Logo and link out on the FoHF Homepage and this Sponsors page",
+        "Logo in Hall Football quarterly newsletter",
+        "Logo included in the program book for the season",
+        "Weekly Hall FB social media recognition",
+        "Logo on team t-shirts"
       ]
     },
     {
@@ -14,7 +17,10 @@
       "slug": "black",
       "amount": "500",
       "benefits": [
-        "Your family or business name listed on this page and the program book for the season, logo on team newsletter, weekly social media recognition"
+        "Logo and link out on the FoHF Homepage and this Sponsors page",
+        "Logo in Hall Football quarterly newsletter",
+        "Logo included in the program book for the season",
+        "Weekly Hall FB social media recognition"
       ]
     },
     {
@@ -22,7 +28,8 @@
       "slug": "friend",
       "amount": "100",
       "benefits": [
-        "Your family or business name listed on this page and the program book for the season"
+        "Logo and link out on the FoHF Homepage and this Sponsors page",
+        "Logo included in the program book for the season"
       ]
     }
   ]
