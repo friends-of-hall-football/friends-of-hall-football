@@ -4,6 +4,7 @@
       "name": "Touchdown Sponsor",
       "slug": "blue",
       "amount": "1,000",
+      "paymentLink": "https://donate.stripe.com/6oUcMY5knaTkfMZ39L4Ni06",
       "benefits": [
         "Logo and link out on the FoHF Homepage and this Sponsors page",
         "Logo in Hall Football quarterly newsletter",
@@ -16,6 +17,7 @@
       "name": "Field Goal Sponsor",
       "slug": "black",
       "amount": "500",
+      "paymentLink": "https://donate.stripe.com/6oU00ccMPd1s30deSt4Ni05",
       "benefits": [
         "Logo and link out on the FoHF Homepage and this Sponsors page",
         "Logo in Hall Football quarterly newsletter",
@@ -27,6 +29,7 @@
       "name": "Extra Point Sponsor",
       "slug": "friend",
       "amount": "100",
+      "paymentLink": "https://donate.stripe.com/8x2aEQaEHbXo9oB4dP4Ni04",
       "benefits": [
         "Logo and link out on the FoHF Homepage and this Sponsors page",
         "Logo included in the program book for the season"
