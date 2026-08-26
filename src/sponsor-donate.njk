@@ -1,0 +1,72 @@
+---
+title: "Complete Your Sponsorship — Friends of Hall Football"
+layout: base.njk
+seoKey: sponsorDonate
+permalink: sponsor-donate.html
+---
+
+  <section class="section wrap">
+    <div class="donate-layout">
+
+      <div>
+        <div class="section-head"><h2>{{ pages.sponsorDonatePage.heading }}</h2></div>
+        <p class="section-lede">{{ pages.sponsorDonatePage.intro }}</p>
+
+        <div class="signup-list sponsor-tiers">
+          <ul>
+            {% for level in sponsorLevels.levels %}
+            {% if level.paymentLink %}
+            <li>
+              <a href="{{ level.paymentLink }}" target="_blank" rel="noopener">
+                <span class="tier-line">
+                  <span class="tier-title">{{ level.name }}</span>
+                  {% if level.amount %}<span class="tier-amount">${{ level.amount }}</span>{% endif %}
+                </span>
+                {% if level.benefits and level.benefits.length %}
+                <span class="tier-benefits">
+                  {% for benefit in level.benefits %}<span>{{ benefit }}</span>{% endfor %}
+                </span>
+                {% endif %}
+              </a>
+            </li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+
+        {% set anyLink = false %}
+        {% for level in sponsorLevels.levels %}{% if level.paymentLink %}{% set anyLink = true %}{% endif %}{% endfor %}
+        {% if not anyLink %}
+        <p class="section-lede">Sponsorship checkout links have not been added yet. Add a Stripe link to each level under Site Content &rarr; Sponsorship Levels.</p>
+        {% endif %}
+
+        <p class="pay-note" style="margin-top:22px">{{ pages.sponsorDonatePage.payNote }}</p>
+      </div>
+
+      <div class="side-stack">
+        <div class="side-card side-card--wash">
+          <h3>Your Gift Is Tax-Deductible</h3>
+          <p>Friends of Hall Football is a registered 501(c)(3) nonprofit. You will receive an emailed receipt you can keep for your tax records.</p>
+        </div>
+
+        <div class="side-card">
+          <h3>Where It Goes</h3>
+          <ul class="bullets">
+            <li>Helmets, pads, and reconditioning between seasons</li>
+            <li>Pre-game and post-game team meals</li>
+            <li>Practice and game-day gear for every player</li>
+            <li>Senior night, banquet, and end-of-season awards</li>
+          </ul>
+        </div>
+
+        <div class="side-card">
+          <h3>Other Ways to Give</h3>
+          <p>Prefer to send a check?</p>
+          <div class="link-stack">
+            <span>Email us at <a href="mailto:{{ site.contactEmail }}">{{ site.contactEmail }}</a> and we will share the mailing address.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>

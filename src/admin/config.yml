@@ -125,8 +125,21 @@ collections:
               - { name: newsletter, label: "Newsletter page", widget: text }
               - { name: volunteer, label: "Volunteer page", widget: text }
               - { name: rosters, label: "Rosters page", widget: text }
+              - { name: sponsorDonate, label: "Sponsor checkout page", widget: text }
               - { name: thankYou, label: "Thank You page", widget: text }
               - { name: sponsorThanks, label: "Sponsor inquiry thank-you page", widget: text }
+          - name: sponsorDonatePage
+            label: "Sponsor Checkout Page"
+            widget: object
+            collapsed: true
+            hint: >-
+              The page at /sponsor-donate.html, used to send a business straight
+              to checkout. It is not in the menu; share the link directly.
+              The levels, amounts, and benefits come from Sponsorship Levels.
+            fields:
+              - { name: heading, label: "Heading", widget: string }
+              - { name: intro, label: "Intro paragraph", widget: text }
+              - { name: payNote, label: "Note below the buttons", widget: text }
           - name: donatePage
             label: "Donate Page"
             widget: object
@@ -197,6 +210,7 @@ collections:
               - { name: name, label: "Level name", widget: string }
               - { name: slug, label: "Style key (titan / blue / black / friend)", widget: string }
               - { name: amount, label: "Amount (numbers only, no $)", widget: string }
+              - { name: paymentLink, label: "Stripe checkout link", widget: string, required: false, hint: "Paste the Stripe payment link for this level. It appears as a button on the Complete Your Sponsorship page. Leave blank to hide that level from the page." }
               - name: benefits
                 label: "What they get"
                 widget: list

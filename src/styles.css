@@ -762,3 +762,34 @@ a:hover { color: var(--navy); }
 .season-block { margin-top: 42px; }
 .season-block:first-of-type { margin-top: 10px; }
 .season-heading { font-family: var(--display); text-transform: uppercase; font-size: clamp(24px, 3.4vw, 32px); margin: 0 0 6px; padding-bottom: 10px; border-bottom: 3px solid var(--navy); }
+
+/* ---------- sponsor checkout tiers ---------- */
+/* Built on .signup-list so these match the Volunteer page blocks, with an
+   amount and a benefit list added inside each block. */
+.sponsor-tiers ul { display: grid; gap: 14px; }
+.sponsor-tiers li a { display: block; }
+.sponsor-tiers .tier-line {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.sponsor-tiers .tier-amount {
+  font-family: var(--display);
+  font-size: clamp(22px, 3vw, 28px);
+  color: var(--blue);
+  white-space: nowrap;
+}
+.sponsor-tiers .tier-benefits {
+  display: block;
+  margin-top: 12px;
+  font-family: var(--body-font, inherit);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--body);
+}
+.sponsor-tiers .tier-benefits span { display: list-item; list-style: disc outside; margin-left: 20px; }
