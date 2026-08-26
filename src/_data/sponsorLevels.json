@@ -2,7 +2,7 @@
   "levels": [
     {
       "name": "Touchdown Sponsor",
-      "slug": "blue",
+      "slug": "titan",
       "amount": "1,000",
       "paymentLink": "https://donate.stripe.com/6oUcMY5knaTkfMZ39L4Ni06",
       "benefits": [
@@ -15,7 +15,7 @@
     },
     {
       "name": "Field Goal Sponsor",
-      "slug": "black",
+      "slug": "blue",
       "amount": "500",
       "paymentLink": "https://donate.stripe.com/6oU00ccMPd1s30deSt4Ni05",
       "benefits": [
@@ -23,6 +23,17 @@
         "Logo in Hall Football quarterly newsletter",
         "Logo included in the program book for the season",
         "Weekly Hall FB social media recognition"
+      ]
+    },
+    {
+      "name": "Gor for 2 Sponsor",
+      "slug": "black",
+      "amount": "250",
+      "paymentLink": "https://donate.stripe.com/4gM7sE6orgdEeIV9y94Ni07",
+      "benefits": [
+        "Logo and link out on the FoHF Homepage and this Sponsors page",
+        "Logo in Hall Football quarterly newsletter",
+        "Logo included in the program book for the season"
       ]
     },
     {
