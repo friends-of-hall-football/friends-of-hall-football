@@ -838,5 +838,16 @@ a:hover { color: var(--navy); }
 }
 .sponsor-modal-logo img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
 .sponsor-modal-card h3 { font-family: var(--display); text-transform: uppercase; font-size: clamp(20px, 4vw, 26px); margin: 0 0 10px; }
-.sponsor-modal-text { margin: 0 0 22px; font-size: 16px; line-height: 1.65; color: var(--body); text-wrap: pretty; }
+/* pre-line keeps the line breaks an editor types in the CMS while still
+   collapsing runs of spaces. Left-aligned because descriptions often contain
+   lists (phone numbers, services) which read badly centred. */
+.sponsor-modal-text {
+  margin: 0 0 22px;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--body);
+  text-wrap: pretty;
+  white-space: pre-line;
+  text-align: left;
+}
 .sponsor-modal-visit[hidden] { display: none; }
