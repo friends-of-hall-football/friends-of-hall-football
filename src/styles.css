@@ -793,3 +793,50 @@ a:hover { color: var(--navy); }
   color: var(--body);
 }
 .sponsor-tiers .tier-benefits span { display: list-item; list-style: disc outside; margin-left: 20px; }
+
+/* ---------- sponsor tiles on small screens ---------- */
+/* Two across, square. A square tile suits the mixed logo shapes better than a
+   wide one: square logos are no longer squeezed by tile height, and wide logos
+   are limited by width either way, so nothing loses out. With seven sponsors
+   this cuts the strip from roughly 1750px tall to about 720px. */
+@media (max-width: 620px) {
+  .sponsor-grid,
+  .sponsor-grid--page {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .sponsor-tile { aspect-ratio: 1 / 1; padding: 12px; }
+}
+
+/* ---------- sponsor detail card ---------- */
+.sponsor-tile[data-description] { cursor: pointer; }
+.sponsor-modal { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 20px; }
+.sponsor-modal[hidden] { display: none; }
+.sponsor-modal-backdrop { position: absolute; inset: 0; background: rgba(10, 31, 53, .72); }
+.sponsor-modal-card {
+  position: relative;
+  background: var(--white);
+  border-radius: 16px;
+  padding: clamp(24px, 5vw, 36px);
+  max-width: 460px;
+  width: 100%;
+  max-height: 88vh;
+  overflow-y: auto;
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .3);
+}
+.sponsor-modal-close {
+  position: absolute; top: 8px; right: 12px;
+  background: none; border: 0; font-size: 32px; line-height: 1;
+  color: var(--body); cursor: pointer; padding: 4px 10px;
+}
+.sponsor-modal-close:hover { color: var(--navy); }
+.sponsor-modal-logo {
+  aspect-ratio: 16 / 9;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 18px;
+}
+.sponsor-modal-logo img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
+.sponsor-modal-card h3 { font-family: var(--display); text-transform: uppercase; font-size: clamp(20px, 4vw, 26px); margin: 0 0 10px; }
+.sponsor-modal-text { margin: 0 0 22px; font-size: 16px; line-height: 1.65; color: var(--body); text-wrap: pretty; }
+.sponsor-modal-visit[hidden] { display: none; }

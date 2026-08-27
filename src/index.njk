@@ -31,7 +31,7 @@ permalink: index.html
       </div>
       <div class="sponsor-grid">
         {% for s in sponsors.list %}
-        <div class="sponsor-tile">{% if s.website %}<a href="{{ s.website }}" target="_blank" rel="noopener">{% endif %}<img src="{{ s.logo | asset }}" alt="{{ s.name }}">{% if s.website %}</a>{% endif %}</div>
+        <div class="sponsor-tile" data-weight="{{ s.tier | tierWeight(sponsorLevels.levels) }}"{% if s.description %} data-name="{{ s.name }}" data-description="{{ s.description }}" data-logo="{{ s.logo | asset }}" data-website="{{ s.website }}"{% endif %}>{% if s.website or s.description %}<a href="{{ s.website or '#' }}"{% if s.website %} target="_blank" rel="noopener"{% endif %}>{% endif %}<img src="{{ s.logo | asset }}" alt="{{ s.name }}">{% if s.website or s.description %}</a>{% endif %}</div>
         {% endfor %}
       </div>
     </div>

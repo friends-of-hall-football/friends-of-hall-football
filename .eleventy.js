@@ -25,6 +25,21 @@ module.exports = function (eleventyConfig) {
     return "/" + u;
   });
 
+  // Lottery weight for a sponsor, used to bias the shuffled order.
+  // Levels are ranked by their position in Sponsorship Levels: the first
+  // level gets the most tickets, the last gets one. A sponsor with no tier
+  // set (or an unrecognised one) gets a single ticket, so it still appears
+  // and can still land near the top, just less often.
+  eleventyConfig.addFilter("tierWeight", (tier, levels) => {
+    const list = Array.isArray(levels) ? levels : [];
+    const name = String(tier || "").trim().toLowerCase();
+    if (!name) return 1;
+    const i = list.findIndex(
+      (l) => String(l.name || "").trim().toLowerCase() === name
+    );
+    return i === -1 ? 1 : list.length - i;
+  });
+
   // Date in the YYYY-MM-DD form sitemap.xml expects.
   eleventyConfig.addFilter("isoDate", (value) => {
     const d = value instanceof Date ? value : new Date(value);

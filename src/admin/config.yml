@@ -194,8 +194,21 @@ collections:
             fields:
               - { name: name, label: "Business name", widget: string }
               - { name: logo, label: "Logo", widget: image, media_folder: "/src/images/sponsors", public_folder: "/images/sponsors" }
-              - { name: tier, label: "Level", widget: string, required: false }
+              - name: tier
+                label: "Level"
+                widget: relation
+                required: false
+                collection: data
+                file: sponsorLevels
+                search_fields: ["levels.*.name"]
+                value_field: "levels.*.name"
+                display_fields: ["levels.*.name"]
+                hint: >-
+                  Sets how often this sponsor appears near the top of the strip.
+                  Higher levels get more entries in the draw, but the order is
+                  still random on every page load. Leave blank for a single entry.
               - { name: website, label: "Website", widget: string, required: false }
+              - { name: description, label: "Short description", widget: text, required: false, hint: "One or two sentences about the business. If filled in, tapping the logo opens a card with this text and a link to their site instead of going straight there. Leave blank to link straight out." }
 
       - name: sponsorLevels
         label: "Sponsorship Levels"

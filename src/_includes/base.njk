@@ -117,5 +117,98 @@
   });
 })();
 </script>
+
+<div class="sponsor-modal" id="sponsor-modal" hidden>
+  <div class="sponsor-modal-backdrop" data-close></div>
+  <div class="sponsor-modal-card" role="dialog" aria-modal="true" aria-labelledby="sponsor-modal-name">
+    <button type="button" class="sponsor-modal-close" data-close aria-label="Close">&times;</button>
+    <div class="sponsor-modal-logo"></div>
+    <h3 id="sponsor-modal-name"></h3>
+    <p class="sponsor-modal-text"></p>
+    <a class="btn btn--primary sponsor-modal-visit" href="#" target="_blank" rel="noopener">Visit Website</a>
+  </div>
+</div>
+
+<script>
+// Sponsor strip: weighted shuffle + optional detail card.
+//
+// Order is randomised on every page load so no sponsor is permanently last.
+// Higher levels get more "tickets" (data-weight) so they land near the top
+// more often, but it is a lottery, not a guarantee - any sponsor can lead.
+(function () {
+  var grids = document.querySelectorAll(".sponsor-grid");
+  if (!grids.length) return;
+
+  function weightedShuffle(tiles) {
+    var pool = tiles.slice();
+    var out = [];
+    while (pool.length) {
+      var total = 0, i;
+      for (i = 0; i < pool.length; i++) {
+        total += Math.max(1, parseInt(pool[i].getAttribute("data-weight"), 10) || 1);
+      }
+      var pick = Math.random() * total, running = 0, chosen = pool.length - 1;
+      for (i = 0; i < pool.length; i++) {
+        running += Math.max(1, parseInt(pool[i].getAttribute("data-weight"), 10) || 1);
+        if (pick < running) { chosen = i; break; }
+      }
+      out.push(pool.splice(chosen, 1)[0]);
+    }
+    return out;
+  }
+
+  grids.forEach(function (grid) {
+    var tiles = Array.prototype.slice.call(grid.querySelectorAll(".sponsor-tile"));
+    if (tiles.length < 2) return;
+    weightedShuffle(tiles).forEach(function (t) { grid.appendChild(t); });
+  });
+
+  // Detail card, shown only for sponsors that have a description written.
+  var modal = document.getElementById("sponsor-modal");
+  if (!modal) return;
+  var nameEl = modal.querySelector("#sponsor-modal-name");
+  var textEl = modal.querySelector(".sponsor-modal-text");
+  var logoBox = modal.querySelector(".sponsor-modal-logo");
+  var visitEl = modal.querySelector(".sponsor-modal-visit");
+  var lastFocus = null;
+
+  function open(tile) {
+    nameEl.textContent = tile.getAttribute("data-name") || "";
+    textEl.textContent = tile.getAttribute("data-description") || "";
+    // The image is created on open so the page never loads an empty <img>.
+    logoBox.innerHTML = "";
+    var src = tile.getAttribute("data-logo");
+    if (src) {
+      var img = document.createElement("img");
+      img.src = src;
+      img.alt = tile.getAttribute("data-name") || "";
+      logoBox.appendChild(img);
+    }
+    var site = tile.getAttribute("data-website");
+    if (site) { visitEl.href = site; visitEl.hidden = false; }
+    else { visitEl.hidden = true; }
+    lastFocus = document.activeElement;
+    modal.hidden = false;
+    document.body.style.overflow = "hidden";
+    modal.querySelector(".sponsor-modal-close").focus();
+  }
+
+  function close() {
+    modal.hidden = true;
+    document.body.style.overflow = "";
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.addEventListener("click", function (e) {
+    var tile = e.target.closest(".sponsor-tile[data-description]");
+    if (tile) { e.preventDefault(); open(tile); return; }
+    if (e.target.closest("[data-close]")) close();
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !modal.hidden) close();
+  });
+})();
+</script>
 </body>
 </html>
