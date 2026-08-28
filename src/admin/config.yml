@@ -105,6 +105,18 @@ collections:
                   - { name: label, label: "Link text", widget: string, hint: "What people see, e.g. Sandwich Sign-up" }
                   - { name: url, label: "SignUpGenius URL", widget: string, pattern: ["^https?://", "Must start with https://"] }
               - { name: closing, label: "Closing paragraph", widget: text }
+          - name: sponsorsPage
+            label: "Sponsors Page"
+            widget: object
+            collapsed: true
+            required: false
+            hint: >-
+              The call-to-action band under the sponsorship levels. Leave any
+              field blank to use the built-in wording.
+            fields:
+              - { name: ctaHeading, label: "Heading", widget: string, required: false, default: "Ready to Sponsor?" }
+              - { name: ctaBody, label: "Paragraph", widget: text, required: false, default: "Pick your level and complete your sponsorship online. It takes about a minute, and you will get an emailed receipt for your records." }
+              - { name: ctaButton, label: "Button text", widget: string, required: false, default: "Become a Sponsor" }
           - name: rostersPage
             label: "Rosters Page"
             widget: object
@@ -137,9 +149,10 @@ collections:
               to checkout. It is not in the menu; share the link directly.
               The levels, amounts, and benefits come from Sponsorship Levels.
             fields:
-              - { name: heading, label: "Heading", widget: string }
-              - { name: intro, label: "Intro paragraph", widget: text }
-              - { name: payNote, label: "Note below the buttons", widget: text }
+              - { name: heading, label: "Heading", widget: string, required: false }
+              - { name: intro, label: "Intro paragraph", widget: text, required: false }
+              - { name: instruction, label: "Tap instruction", widget: string, required: false, hint: "Short line telling people the levels are tappable. Leave blank for the built-in wording." }
+              - { name: payNote, label: "Note below the buttons", widget: text, required: false }
           - name: donatePage
             label: "Donate Page"
             widget: object

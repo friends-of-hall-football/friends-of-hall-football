@@ -36,21 +36,29 @@ permalink: sponsors.html
         </div>
         {% endfor %}
       </div>
+
+      <div class="levels-cta">
+        <div class="levels-cta-copy">
+          <h3>{{ pages.sponsorsPage.ctaHeading or "Ready to Sponsor?" }}</h3>
+          <p>{{ pages.sponsorsPage.ctaBody or "Pick your level and complete your sponsorship online. It takes about a minute, and you will get an emailed receipt for your records." }}</p>
+        </div>
+        <a class="btn btn--primary btn--large" href="/sponsor-donate.html">{{ pages.sponsorsPage.ctaButton or "Become a Sponsor" }}</a>
+      </div>
     </div>
   </section>
 
   <section class="section wrap">
     <div class="split">
       <div>
-        <h2>Talk to Us</h2>
-        <p class="section-lede" style="margin-top:16px">Interested in sponsoring, or want to donate goods or services instead of cash? Send us a note and a board member will get back to you.</p>
+        <h2>Questions?</h2>
+        <p class="section-lede" style="margin-top:16px">Not sure which level fits, want to donate goods or services instead of cash, or prefer to pay by check? Send us a note and a board member will get back to you.</p>
         <div>
           <div class="side-meta-label">Email</div>
           <div class="side-meta-value">{{ site.contactEmail }}</div>
         </div>
       </div>
       <div class="card card--outline">
-        <h3>Sponsor Inquiry</h3>
+        <h3>Ask a Question</h3>
         <form class="card-form" method="POST" name="sponsor-inquiry" data-netlify="true" netlify-honeypot="bot-field" action="/sponsor-thanks.html">
           <input type="hidden" name="form-name" value="sponsor-inquiry">
           <p class="hidden-field"><label>Leave this field empty <input name="bot-field"></label></p>
@@ -60,10 +68,10 @@ permalink: sponsors.html
           <label class="field">Email
             <input type="email" name="email" placeholder="you@email.com" required>
           </label>
-          <label class="field">What are you interested in?
-            <textarea name="message" rows="4" placeholder="Tell us which level you are interested in, or ask us a question." required></textarea>
+          <label class="field">How can we help?
+            <textarea name="message" rows="4" placeholder="Ask about a level, offer goods or services, or tell us how you would like to help." required></textarea>
           </label>
-          <button class="btn btn--primary btn--block" type="submit">Send Inquiry</button>
+          <button class="btn btn--primary btn--block" type="submit">Send Question</button>
         </form>
       </div>
     </div>

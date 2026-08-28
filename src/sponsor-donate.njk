@@ -9,8 +9,10 @@ permalink: sponsor-donate.html
     <div class="donate-layout">
 
       <div>
-        <div class="section-head"><h2>{{ pages.sponsorDonatePage.heading }}</h2></div>
-        <p class="section-lede">{{ pages.sponsorDonatePage.intro }}</p>
+        <div class="section-head"><h2>{{ pages.sponsorDonatePage.heading or "Complete Your Sponsorship" }}</h2></div>
+        <p class="section-lede">{{ pages.sponsorDonatePage.intro or "Thank you for supporting Hall Titans football. Choose your sponsorship level below to finish through our secure Stripe checkout." }}</p>
+
+        <p class="tier-instruction">{{ pages.sponsorDonatePage.instruction or "Tap a level below to pay securely through Stripe." }}</p>
 
         <div class="signup-list sponsor-tiers">
           <ul>
@@ -27,6 +29,7 @@ permalink: sponsor-donate.html
                   {% for benefit in level.benefits %}<span>{{ benefit }}</span>{% endfor %}
                 </span>
                 {% endif %}
+                <span class="tier-cta">Select this level &rarr;</span>
               </a>
             </li>
             {% endif %}
@@ -40,7 +43,7 @@ permalink: sponsor-donate.html
         <p class="section-lede">Sponsorship checkout links have not been added yet. Add a Stripe link to each level under Site Content &rarr; Sponsorship Levels.</p>
         {% endif %}
 
-        <p class="pay-note" style="margin-top:22px">{{ pages.sponsorDonatePage.payNote }}</p>
+        <p class="pay-note" style="margin-top:22px">{{ pages.sponsorDonatePage.payNote or "You will be taken to our secure Stripe checkout page, where you can pay by card, Apple Pay, or Google Pay. Friends of Hall Football never sees or stores your card number." }}</p>
       </div>
 
       <div class="side-stack">
