@@ -58,7 +58,7 @@
     },
     {
       "label": "Store (BSN)",
-      "visible": true,
+      "visible": false,
       "url": "https://bsnteamsports.com/shop/XdMLJqEZm1",
       "external": true,
       "key": "",
