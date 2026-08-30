@@ -63,6 +63,14 @@
       "external": true,
       "key": "",
       "siteKey": ""
+    },
+    {
+      "label": "Hall Football Team Store",
+      "visible": true,
+      "url": "https://friends-of-hall-football.printify.me/",
+      "external": true,
+      "key": "",
+      "siteKey": ""
     }
   ]
 }
