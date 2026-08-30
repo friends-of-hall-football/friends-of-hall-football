@@ -49,6 +49,14 @@
       "siteKey": ""
     },
     {
+      "label": "Hall Football Team Store",
+      "visible": true,
+      "url": "https://friends-of-hall-football.printify.me/",
+      "external": true,
+      "key": "",
+      "siteKey": ""
+    },
+    {
       "label": "Store (5K)",
       "visible": true,
       "url": "",
@@ -60,14 +68,6 @@
       "label": "Store (BSN)",
       "visible": false,
       "url": "https://bsnteamsports.com/shop/XdMLJqEZm1",
-      "external": true,
-      "key": "",
-      "siteKey": ""
-    },
-    {
-      "label": "Hall Football Team Store",
-      "visible": true,
-      "url": "https://friends-of-hall-football.printify.me/",
       "external": true,
       "key": "",
       "siteKey": ""
