@@ -45,6 +45,21 @@ collections:
               - { name: primaryButton, label: "Blue button text", widget: string }
               - { name: secondaryButton, label: "White button text", widget: string }
               - { name: image, label: "Banner photo", widget: image, media_folder: "/src/images", public_folder: "/images" }
+          - name: storeBanner
+            label: "Homepage — Store Banner"
+            widget: object
+            collapsed: true
+            required: false
+            hint: >-
+              The blue strip above the top banner. Untick "Show the banner" to
+              hide it. Leave any text field blank to use the built-in wording.
+            fields:
+              - { name: enabled, label: "Show the banner", widget: boolean, default: true, required: false }
+              - { name: tag, label: "Small label", widget: string, required: false, default: "New" }
+              - { name: heading, label: "Headline", widget: string, required: false, default: "The Titans Team Store is open" }
+              - { name: body, label: "Supporting line (hidden on phones)", widget: string, required: false, default: "Hoodies, hats, tees, stickers and more — shipped to your door." }
+              - { name: button, label: "Button text", widget: string, required: false, default: "Shop Now" }
+              - { name: url, label: "Store link", widget: string, required: false, default: "https://friends-of-hall-football.printify.me/" }
           - name: sponsorBand
             label: "Homepage — Sponsor Strip"
             widget: object

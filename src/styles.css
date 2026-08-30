@@ -913,3 +913,146 @@ a:hover { color: var(--navy); }
 .sponsor-tiers li a:hover,
 .sponsor-tiers li a:focus-visible { background: var(--wash); }
 .sponsor-tiers li a:hover .tier-cta { text-decoration: underline; }
+
+/* ---------- store promo banner ---------- */
+/* Full-bleed strip above the hero. Blue so it separates the white header from
+   the navy hero without competing with either. The whole strip is one link. */
+.store-banner {
+  /* Diagonal gradient from the deep navy into the brand blue, with a faint
+     Titans mark watermarked on the right. The logo is forced to a white
+     silhouette so it reads as texture rather than a second, competing logo. */
+  background: linear-gradient(100deg, var(--navy) 0%, #14448f 44%, var(--blue) 100%);
+  position: relative;
+  overflow: hidden;
+}
+/* Text-free Titans mark as a watermark, forced to a white silhouette so it
+   reads as texture rather than a second logo competing with the header. */
+.store-banner::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: max(calc((100% - var(--page)) / 2 - 46px), 10px);
+  transform: translateY(-50%);
+  /* Sized from the strip's own height so the whole mark stays readable at
+     every breakpoint instead of being cropped into an ambiguous shape. */
+  /* Fully visible so it still reads as the Titans T, with a vertical fade so
+     the mark dissolves into the gradient toward the bottom. */
+  height: 96%;
+  aspect-ratio: 295 / 360;
+  width: auto;
+  background: url("/assets/titans-mark.png") no-repeat center / contain;
+  filter: brightness(1.35) saturate(1.15);
+  opacity: .5;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 64%, rgba(0,0,0,.55) 84%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 64%, rgba(0,0,0,.55) 84%, transparent 100%);
+  pointer-events: none;
+}
+/* Hidden on phones: the strip stacks there and the mark would sit behind the
+   label rather than reading as background texture. */
+@media (max-width: 620px) { .store-banner::before { display: none; } }
+
+/* A soft diagonal sheen so the flat gradient has some movement. */
+.store-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(104deg, transparent 38%, rgba(255,255,255,.07) 50%, transparent 62%);
+  pointer-events: none;
+}
+.store-banner-inner { position: relative; z-index: 1; }
+.store-banner-inner {
+  max-width: var(--page);
+  margin: 0 auto;
+  padding: 14px var(--gutter);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  color: var(--white);
+}
+.store-banner-tag {
+  flex: 0 0 auto;
+  background: var(--white);
+  color: var(--blue);
+  font-family: var(--display);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: 13px;
+  padding: 5px 11px;
+  border-radius: 999px;
+}
+.store-banner-copy { flex: 1 1 auto; min-width: 0; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.store-banner-copy strong {
+  font-family: var(--display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  font-size: 20px;
+  line-height: 1.15;
+}
+.store-banner-sub { font-size: 15px; color: #dbe9fb; line-height: 1.4; }
+.store-banner-btn {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--white);
+  color: var(--navy);
+  box-shadow: 0 3px 0 rgba(0, 0, 0, .28), 0 6px 16px rgba(0, 0, 0, .18);
+  transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+  font-family: var(--display);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+.store-banner-inner,
+.store-banner-inner:hover,
+.store-banner-inner:focus-visible { color: var(--white); }
+.store-banner-inner:hover .store-banner-copy strong { color: var(--white); }
+.store-banner-inner:hover .store-banner-sub { color: #dbe9fb; }
+.store-banner-inner:hover .store-banner-tag { color: var(--blue); }
+.store-banner-inner:hover .store-banner-btn {
+  background: #eef3f9;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0 rgba(0, 0, 0, .28), 0 10px 22px rgba(0, 0, 0, .22);
+}
+.store-banner-inner:active .store-banner-btn {
+  transform: translateY(1px);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .28), 0 3px 8px rgba(0, 0, 0, .18);
+}
+.store-banner-btn svg { transition: transform .12s ease; }
+.store-banner-inner:hover .store-banner-btn svg { transform: translate(2px, -2px); }
+@media (prefers-reduced-motion: reduce) {
+  .store-banner-btn, .store-banner-btn svg { transition: none; }
+  .store-banner-inner,
+.store-banner-inner:hover,
+.store-banner-inner:focus-visible { color: var(--white); }
+.store-banner-inner:hover .store-banner-copy strong { color: var(--white); }
+.store-banner-inner:hover .store-banner-sub { color: #dbe9fb; }
+.store-banner-inner:hover .store-banner-tag { color: var(--blue); }
+.store-banner-inner:hover .store-banner-btn { transform: none; }
+  .store-banner-inner:hover .store-banner-btn svg { transform: none; }
+}
+
+/* Below 780px the sub-line is dropped and the layout stacks so the tag,
+   headline and button stay legible without the strip becoming a paragraph. */
+@media (max-width: 780px) {
+  .store-banner-inner { flex-wrap: wrap; gap: 10px 12px; padding: 12px var(--gutter); }
+  .store-banner-copy strong { font-size: 18px; }
+  .store-banner-sub { display: none; }
+  .store-banner-btn { font-size: 15px; padding: 9px 16px; }
+}
+@media (max-width: 460px) {
+  /* Two rows: tag beside the headline, then a full-width button. Three
+     stacked rows made the strip taller than the header above it. */
+  .store-banner-inner { gap: 10px; }
+  .store-banner-tag { order: 1; flex: 0 0 auto; }
+  .store-banner-copy { order: 2; flex: 1 1 0; min-width: 0; }
+  .store-banner-copy strong { font-size: 17px; }
+  .store-banner-btn { order: 3; flex: 1 1 100%; justify-content: center; }
+}

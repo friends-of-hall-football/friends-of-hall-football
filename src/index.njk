@@ -6,6 +6,21 @@ seoKey: home
 permalink: index.html
 ---
 
+{% if pages.storeBanner.enabled !== false %}
+<aside class="store-banner">
+  <a class="store-banner-inner" href="{{ pages.storeBanner.url or 'https://friends-of-hall-football.printify.me/' }}" target="_blank" rel="noopener">
+    <span class="store-banner-tag">{{ pages.storeBanner.tag or "New" }}</span>
+    <span class="store-banner-copy">
+      <strong>{{ pages.storeBanner.heading or "The Titans Team Store is open" }}</strong>
+      <span class="store-banner-sub">{{ pages.storeBanner.body or "Hoodies, hats, tees, stickers and more — shipped to your door." }}</span>
+    </span>
+    <span class="store-banner-btn">{{ pages.storeBanner.button or "Shop Now" }}
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"></path><path d="M20 4 11 13"></path><path d="M19 15v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4"></path></svg>
+    </span>
+  </a>
+</aside>
+{% endif %}
+
 <section class="hero">
     <div class="hero-inner">
       <div class="hero-copy">
