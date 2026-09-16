@@ -4,8 +4,9 @@
     "body": "Friends of Hall Football is the family and community run booster club behind your team. Your support pays for equipment, meals, team gear, and the moments these players will remember for the rest of their lives.",
     "primaryButton": "Make a Donation",
     "secondaryButton": "Shop Titans Gear",
-    "image": "/images/_Hero.jpg"
+    "image": "/images/_Next_Game_v2.jpg"
   },
+  "storeBanner": null,
   "sponsorBand": {
     "heading": "Thank You to Our Sponsors"
   },
@@ -13,7 +14,7 @@
     "nextUpHeading": "Next Up",
     "nextUpNote": "2026 Varsity season",
     "fullHeading": "Full 2026 Varsity Schedule",
-    "nextUpImage": "/images/_Next_Game.jpg"
+    "nextUpImage": "/images/_Next_Game_v2.jpg"
   },
   "newsSection": {
     "heading": "Titans News"
@@ -58,6 +59,7 @@
     ],
     "closing": "Do not see something that fits, or want to help in another way? Email us and we will find a spot for you."
   },
+  "sponsorsPage": null,
   "rostersPage": {
     "heading": "Rosters",
     "intro": "Varsity, Junior Varsity, and Freshman rosters for the Hall Titans."
@@ -69,8 +71,15 @@
     "newsletter": "Read the Hall Quarterly newsletter for team updates, player recognition, and fundraiser dates from Friends of Hall Football.",
     "volunteer": "Volunteer with Friends of Hall Football. Grill burgers, work the gate, or run the concession stand at Hall Titans home games.",
     "rosters": "Varsity, Junior Varsity, and Freshman rosters for William H. Hall High School football in West Hartford, CT.",
+    "sponsorDonate": "Thank you for supporting Hall Titans football.",
     "thankYou": "Thank you for supporting Hall Titans football.",
     "sponsorThanks": "Thank you for your sponsorship inquiry."
+  },
+  "sponsorDonatePage": {
+    "heading": "",
+    "intro": "",
+    "instruction": "",
+    "payNote": ""
   },
   "donatePage": {
     "cardHeading": "Make a Donation",
