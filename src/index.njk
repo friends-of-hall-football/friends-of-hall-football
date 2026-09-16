@@ -59,28 +59,31 @@ permalink: index.html
     </div>
     <div class="next-game">
       <div class="next-game-panel">
-        <div class="next-game-kicker">{{ nextGame.kicker }}</div>
-        <div class="next-game-title">{{ nextGame.title }}</div>
+        <div class="next-game-kicker" data-next="kicker">{{ nextGame.kicker }}</div>
+        <div class="next-game-title" data-next="title">{{ nextGame.title }}</div>
         <div class="next-game-info">
           <div>
             <div class="info-label">Kickoff</div>
-            <div class="info-value">{{ nextGame.time }}</div>
+            <div class="info-value" data-next="time">{{ nextGame.time }}</div>
           </div>
           <div>
             <div class="info-label">Where</div>
-            <div class="info-value">{{ nextGame.site | safe }}</div>
+            <div class="info-value" data-next="site">{{ nextGame.site | safe }}</div>
           </div>
-          {% if nextGame.bus %}
-          <div>
+          <div data-next="busWrap"{% if not nextGame.bus %} hidden{% endif %}>
             <div class="info-label">Bus Leaves</div>
-            <div class="info-value">{{ nextGame.bus }}</div>
+            <div class="info-value" data-next="bus">{{ nextGame.bus }}</div>
           </div>
-          {% endif %}
         </div>
       </div>
       <div class="next-game-photo"><img src="{{ pages.scheduleSection.nextUpImage | asset }}" alt="Hall Titans team photo"></div>
     </div>
   </section>
+
+  {# The panel above is also computed at build time, which freezes it until the
+     next deploy. This copy of the schedule lets the browser recompute it on
+     every visit so it is correct without a rebuild. #}
+  <script type="application/json" id="schedule-data">{{ schedule.games | dump | safe }}</script>
 
   <section class="section section--tight wrap">
     <div class="section-head">

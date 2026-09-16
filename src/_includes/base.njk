@@ -210,5 +210,74 @@
   });
 })();
 </script>
+
+<script>
+// "Next Up" is rendered at build time, so without this it would show whatever
+// was next when the site was last deployed. This recomputes it against the
+// visitor's own date on every page load. If anything here fails, the
+// build-time markup simply stays as it is.
+(function () {
+  var el = document.getElementById("schedule-data");
+  if (!el) return;
+  var games;
+  try { games = JSON.parse(el.textContent); } catch (e) { return; }
+  if (!Array.isArray(games) || !games.length) return;
+
+  var WEEKDAY = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  var MONTH = ["January","February","March","April","May","June",
+               "July","August","September","October","November","December"];
+
+  var today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  // Dates are stored as "THU 9/10" with no year. Treat a month far behind the
+  // current one as next year's date, so a January visit does not pick up the
+  // previous autumn's fixtures.
+  function parse(g) {
+    var m = /(\d{1,2})\/(\d{1,2})/.exec(g.date || "");
+    if (!m) return null;
+    var mon = Number(m[1]) - 1, day = Number(m[2]);
+    var year = today.getFullYear();
+    var d = new Date(year, mon, day);
+    if (today.getMonth() - mon > 6) d = new Date(year + 1, mon, day);
+    else if (mon - today.getMonth() > 6) d = new Date(year - 1, mon, day);
+    return d;
+  }
+
+  var upcoming = games
+    .map(function (g) { return { g: g, d: parse(g) }; })
+    .filter(function (x) { return x.d && x.d >= today; })
+    .sort(function (a, b) { return a.d - b.d; })[0];
+
+  // Season over: fall back to the final fixture rather than leaving whatever
+  // game happened to be next when the site was last built.
+  if (!upcoming) {
+    var last = games[games.length - 1];
+    upcoming = { g: last, d: parse(last) };
+    if (!upcoming.d) return;
+  }
+
+  var g = upcoming.g, d = upcoming.d;
+  var away = /^at /i.test(g.opponent || "");
+  var opp = String(g.opponent || "").replace(/^(at|vs)\s+/i, "");
+
+  function set(key, value, asHtml) {
+    var node = document.querySelector('[data-next="' + key + '"]');
+    if (!node) return;
+    if (asHtml) node.innerHTML = value; else node.textContent = value;
+  }
+
+  set("kicker", WEEKDAY[d.getDay()] + ", " + MONTH[d.getMonth()] + " " + d.getDate() + " \u00b7 " + (g.type || ""));
+  set("title", away ? "Hall at " + opp : "Hall vs " + opp);
+  set("time", g.time || "");
+  set("site", String(g.site || "").replace(" \u2014 ", "<br>"), true);
+
+  var busWrap = document.querySelector('[data-next="busWrap"]');
+  if (busWrap) {
+    if (g.bus) { set("bus", g.bus); busWrap.hidden = false; }
+    else { busWrap.hidden = true; }
+  }
+})();
+</script>
 </body>
 </html>
