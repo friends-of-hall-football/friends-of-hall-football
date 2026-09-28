@@ -6,7 +6,8 @@
       "opponent": "at Glastonbury",
       "type": "Scrimmage",
       "home": false,
-      "site": "Glastonbury High School \u2014 Field 1 (Stadium Turf)"
+      "site": "Glastonbury High School — Field 1 (Stadium Turf)",
+      "bus": ""
     },
     {
       "date": "SAT 8/29",
@@ -14,7 +15,8 @@
       "opponent": "vs Windham, SMSA Co-Op, Crosby",
       "type": "Scrimmage",
       "home": false,
-      "site": "Hall High School \u2014 Football Practice Field"
+      "site": "Hall High School — Football Practice Field",
+      "bus": ""
     },
     {
       "date": "FRI 9/4",
@@ -22,15 +24,17 @@
       "opponent": "at Farmington",
       "type": "Scrimmage",
       "home": false,
-      "site": "Farmington High School \u2014 Turf Field"
+      "site": "Farmington High School — Turf Field",
+      "bus": ""
     },
     {
       "date": "THU 9/10",
       "time": "7:00 PM",
       "opponent": "vs Platt",
-      "type": "League \u00b7 Home",
+      "type": "League · Home",
       "home": true,
-      "site": "Conard High School \u2014 McKee Stadium"
+      "site": "Conard High School — McKee Stadium",
+      "bus": ""
     },
     {
       "date": "FRI 9/18",
@@ -38,7 +42,8 @@
       "opponent": "at Shelton",
       "type": "Non-League",
       "home": false,
-      "site": "Shelton High School \u2014 Finn Stadium"
+      "site": "Shelton High School — Finn Stadium",
+      "bus": ""
     },
     {
       "date": "THU 9/24",
@@ -46,39 +51,44 @@
       "opponent": "at Manchester",
       "type": "League",
       "home": false,
-      "site": "Memorial Field @ MHS"
+      "site": "Memorial Field @ MHS",
+      "bus": ""
     },
     {
-      "date": "FRI 10/2",
-      "time": "7:00 PM",
-      "opponent": "vs Enfield",
-      "type": "League \u00b7 Home",
+      "date": "SAT 10/3",
+      "time": "1:30 PM",
+      "opponent": "vs. Enfield",
+      "type": "League · Home",
       "home": true,
-      "site": "Hall High School \u2014 Stadium (Turf Field)"
+      "site": "Conard High School — Stadium (Turf Field)",
+      "bus": ""
     },
     {
       "date": "FRI 10/9",
       "time": "7:00 PM",
       "opponent": "vs Bristol Central",
-      "type": "League \u00b7 Home",
+      "type": "League · Home",
       "home": true,
-      "site": "Hall High School \u2014 Stadium (Turf Field)"
+      "site": "Hall High School — Stadium (Turf Field)",
+      "bus": ""
     },
     {
       "date": "FRI 10/23",
       "time": "7:00 PM",
       "opponent": "vs Wethersfield",
-      "type": "League \u00b7 Home",
+      "type": "League · Home",
       "home": true,
-      "site": "Hall High School \u2014 Stadium (Turf Field)"
+      "site": "Hall High School — Stadium (Turf Field)",
+      "bus": ""
     },
     {
       "date": "FRI 10/30",
       "time": "7:00 PM",
       "opponent": "vs Berlin",
-      "type": "League \u00b7 Home",
+      "type": "League · Home",
       "home": true,
-      "site": "Hall High School \u2014 Stadium (Turf Field)"
+      "site": "Hall High School — Stadium (Turf Field)",
+      "bus": ""
     },
     {
       "date": "FRI 11/6",
@@ -86,7 +96,8 @@
       "opponent": "at East Hartford",
       "type": "League",
       "home": false,
-      "site": "East Hartford High School \u2014 Turf Field"
+      "site": "East Hartford High School — Turf Field",
+      "bus": ""
     },
     {
       "date": "SAT 11/14",
@@ -94,7 +105,8 @@
       "opponent": "at South Windsor",
       "type": "League",
       "home": false,
-      "site": "South Windsor High School \u2014 SWHS Turf Field"
+      "site": "South Windsor High School — SWHS Turf Field",
+      "bus": ""
     },
     {
       "date": "SAT 11/21",
@@ -102,7 +114,8 @@
       "opponent": "at Conard",
       "type": "League",
       "home": false,
-      "site": "Conard High School \u2014 McKee Stadium"
+      "site": "Conard High School — McKee Stadium",
+      "bus": ""
     }
   ]
 }
